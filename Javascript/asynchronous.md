@@ -1,3 +1,4 @@
+Author: @snowjang24
 # 비동기(Asynchronous)
 
 ## 여는 말
@@ -8,7 +9,7 @@
 
 비동기와 동기에 대해 검색하면 가장 먼저 아래와 같은 사진을 마주치게 된다. 동기는 일이 끝나기를 기다렸다가 끝나면 다음 일을 순차적으로 처리하고, 비동기는 기다림 없이 다음 일을 바로 실행하는구나 라는 간단하게 이해했다. 하지만 그래서 자바스크립트는 동기로 작동하나? 비동기는 어디에 쓰이는 거지? 라는 의문이 든다.
 
-![asynchronous/Untitled.png](asynchronous/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/26768201/86256008-c7653580-bbf2-11ea-82e8-27c8b75e619e.png)
 
 [Synchronous, Asynchronous](https://velog.io/@cyongchoi/%EB%B9%84%EB%8F%99%EA%B8%B0asynchronous-%EA%B0%9C%EB%85%90)
 
@@ -21,7 +22,7 @@
 
 자바스크립트는 **싱글 쓰레드(Single Thread)**기반의 언어다. 쓰레드가 하나라는 말은 한번에 하나의 작업만 처리 가능하다는 뜻이다. 하지만, 우리가 자바스크립트를 사용하는 환경인 Node는 여러 개의 HTTP요청을 처리하고, 브라우저는 이벤트 처리나 애니메이션 실행 등 다양한 일을 동시에 처리한다. 마치 싱글 쓰레드가 아닌 것처럼 여러 작업을 동시에 처리한다. 마치 멀티 쓰레드처럼 작동한다.
 
-![asynchronous/Untitled%201.png](asynchronous/Untitled%201.png)
+![Untitled 1](https://user-images.githubusercontent.com/26768201/86256066-d350f780-bbf2-11ea-9460-4f6c88371697.png)
 
 [싱글 스레드와 멀티 스레드](https://blog.lgcns.com/1084)
 
@@ -35,31 +36,31 @@
 
 동시성은 동시에 실행되는 것 같지만 실제로는 그렇지 않고, 병렬성은 실제로 동시에 실행되는 차이가 있다. 결과적으로 둘 다 **멀티 쓰레드의 동작 방식**이다. 두 동작 방식의 차이에 대한 아래의 그림을 보면 이해가 빠를 것이다. 
 
-![asynchronous/333333.png](asynchronous/333333.png)
+![333333](https://user-images.githubusercontent.com/26768201/86256043-cf24da00-bbf2-11ea-9926-7f33c6b743d4.png)
 
 ### Single Thread와 Multi Thread
 
 아래의 이미지는 싱글 쓰레드와 멀티 쓰레드의 작동 방식에 대해 잘 설명하고 있다. 여기서 Object는 쓰레드를 의미하는 것이 아니다.
 
-![asynchronous/Untitled%202.png](asynchronous/Untitled%202.png)
+![Untitled 2](https://user-images.githubusercontent.com/26768201/86256073-d3e98e00-bbf2-11ea-9054-c78888d5582a.png)
 
 [Performance comparison of single-threaded and multi-threaded execution](https://www.researchgate.net/figure/Performance-comparison-of-single-threaded-and-multi-threaded-execution_fig2_29528663)
 
 위의 이미지와 아래의 이미지는 함께 보면 좀 더 이해가 편하다. 각각의 차이가 명확하게 보인다.
 
-![asynchronous/Untitled%203.png](asynchronous/Untitled%203.png)
+![Untitled 3](https://user-images.githubusercontent.com/26768201/86256077-d4822480-bbf2-11ea-85eb-4b4233c60a07.png)
 
 [Parallelism vs. Concurrency](http://www.dietergalea.com/parallelism-concurrency/)
 
 이제 다시 돌아와서, 우리가 집중해야하는 부분은 **(a)single-threaded**와 **(b)multi-threaded(single active thread)**다. 
 
-![asynchronous/Untitled%204.png](asynchronous/Untitled%204.png)
+![Untitled 4](https://user-images.githubusercontent.com/26768201/86256079-d51abb00-bbf2-11ea-9a46-f2f654438df4.png)
 
 [Performance comparison of single-threaded and multi-threaded execution](https://www.researchgate.net/figure/Performance-comparison-of-single-threaded-and-multi-threaded-execution_fig2_29528663)
 
 어디서 많이 본 모양이다. 비동기와 동기... 
 
-![asynchronous/Untitled.png](asynchronous/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/26768201/86256008-c7653580-bbf2-11ea-82e8-27c8b75e619e.png)
 
 [Synchronous, Asynchronous](https://velog.io/@cyongchoi/%EB%B9%84%EB%8F%99%EA%B8%B0asynchronous-%EA%B0%9C%EB%85%90)
 
@@ -73,9 +74,10 @@
 
 이 부분을 해결하는 것이 바로 브라우저와 Node다. 브라우저와 Node의 동작 원리는 아래와 같이 도식화가 되어 있다. 자바스크립트의 동작 원리에 대해 공부할 때 자주 보던 그림이다. 아래의 이미지에서 볼 수 있듯이 `XMLHttpRequest`, `setTimeout`과 같이 비동기 호출을 하는 메서드는 모두 자바스크립트 엔진 밖의 영역에 정의되어 있다.
 
-![asynchronous/Untitled%205.png](asynchronous/Untitled%205.png)
+![Untitled 5](https://user-images.githubusercontent.com/26768201/86256082-d5b35180-bbf2-11ea-847c-d8684cdb4af5.png)
 
-![asynchronous/Untitled%206.png](asynchronous/Untitled%206.png)
+![Untitled 6](https://user-images.githubusercontent.com/26768201/86256084-d5b35180-bbf2-11ea-911f-1abe57f51fc0.png)
+
 
 ## 드디어 비동기!
 
