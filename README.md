@@ -8,7 +8,7 @@
 * [Interview_Question_for_Beginner](https://github.com/JaeYeopHan/Interview_Question_for_Beginner)
 
 
-## Teammates :sparkles:
+# Teammates :sparkles:
 <table>
 <tr>
                 <td align="center">
