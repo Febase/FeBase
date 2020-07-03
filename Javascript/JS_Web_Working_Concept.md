@@ -1,111 +1,145 @@
 Author: [@samslow](https://github.com/samslow)
 
-- 이 글은 JS Prototype Chaining을 설명하기위해 Prototype Object, Prototype Link을 설명합니다.
+- Client가 버튼을 누른 결과가 Server를 거쳐 다시 Client에 오는 과정을 설명합니다.
+  - Web에서 사용되는 기본 개념들에 대해서 알 수 있습니다.
+  - Client to Client 의 순환 과정을 알 수 있다.
+  - Browser가 하는 역할에 대해서 알 수 있다.
 
-# 자바스크립트의 태생
+# Web 기본부터 Alaboza
 
-JS는 class 기반의 객체지향 언어로 대부분 알고있다. 사용하기에 따라서 React, Vue 같은 곳에서는 함수형 프로그래밍을 흉내 낼 수도 있다. 하지만, JS는 ES6에서 생긴 개념인 class가 직접 존재하는 게 아니다. Prototype을 통해 생성되고 여기서 생성 자체는 또 함수를 사용(?)하기 때문에 `객체 → 프로토타입 → 함수 → 객체`로 이상한 Cycle이 형성되어버린다고 생각이 들 수도 있다. 그래서 JS를 객체지향 언어, 함수형 언어, 프로토 타입 언어 등의 다양한 이름으로 불리는데, 결국 MDN에서는 JS를 `세계에서 가장 오해받고있는 프로그래밍 언어`로 정의하기도 했다.
+Web Frontend를 지향하는 개발자라고 한다면 JS 기초나 CS 지식을 필수적으로 알아야 하겠지만, 역시 그 중심에는 Web이 어떻게 동작하여 사용자에게 까지 도달 하는지를 아는 것이 중요하다.
 
-JS 자체가 처음 출시된 날짜는 1995년 12월 4일이니 그래도 언어들 사이에선 셋째 형 정도의 레벨을 갖고 있는데, 그러다보니 넷스케이프에서 처음 출시될 때는 둘째 형인 Java처럼 되고싶다며 구문이 첫째형인 C언어와 같다는 것만 빼고 완전 다른 셋째 JavaScript가 나오게 되었다.
+Web이란 기본적으로 `거미줄` 이라는 뜻을 가지고 있는데 전 세계에 퍼진 회선의 모양이 거미줄 같아서 붙여진 뜻이다.
 
-이런 이유들로 JS를 정의하자면 `다중 패러다임, 동적 언어` 이라고 할 수 있다. (너무 뭉뚱그린다고 할 수 있지만 보는 사람마다 시야가 다른것을 ㅜㅜ)
+또한 Web은 `World Wide Web(WWW)`의 준말으로도 알려져 있다.
 
-# 따라쟁이 셋째 JS가 지키고 싶었던 것 - Prototype
+![GT Answers: The Difference Between the Internet and the World Wide Web](https://cdn.guidingtech.com/media/assets/WordPress-Import/2016/06/shutterstock_112158140.jpg)
 
-객체 지향 언어로 명시된 Java, Python, Ruby 에서 Class가 빠질 수 없는 개념 인 것처럼 JS에서도 Prototype을 알면 JS의 그 자체를 이해하는 것이라고 봐도 무방하다.
+<div align="center"><em style="color: gray;">뭔가 최신 기술이 나올때면 익숙하게 보던 그 그림..</em></div>
 
-Java와 다르다는 것은 명백하지만 비슷한 부분은 있고, 그것이 Java의 class가 아니라는것을 구분하기 위해 Prototype이라는 개념이 나온 것이다.
+Web 동작 방식에 대한 Shallow한 개념은 아래와 같다.
 
-ES6에서 class의 개념이 나온 것은 맞지만 오해하지 말야아 할 것은, prototype이 class로 변화된 것은 아니고, 원래도 js는 class의 기능을 묘사하기 위해 prototype로 상속같은 것을 구현 할 수 있었고 이를 문법적으로 쉽게 만들어 사용 할 수 있게 한 것이 ES6의 class이다.
+1. 사용자가 도메인(ex. www.google.com) 을 주소창에 입력한다.
+2. 브라우저는 이 도메인을 가진 IP 주소를 DNS 서버로 부터 얻는다.
+3. IP를 가진 서버에서는 HTML, CSS, JS로 구성된 파일을 브라우저로 보낸다.
+4. 브라우저는 이를 해석하여 다시 사용자에게 보여준다.
 
-따라서 class가 생겼다고 prototype의 개념이 중요해지지 않는 것이 아니고, 오히려 보이지 않아졌기 때문에 그것을 알기가 어려워져서 더 알아야 하는 개념이 된 것이다.
+하지만, 이같은 내용은 매우 기본적인 내용이고, 사실 이 안에는 더 복잡하고 상세한 내용이 담겨져 있다.
 
-그럼 Prototype의 개념은 여기까지 하고 Prototype Chaining은 무엇일까?
+이 포스팅에서는 이런 내부 구조와 동작에 대해 상세히 알아보고
 
-이것을 설명하기 위해선 `Prototype Object`와 `Prototype Link`를 알고 넘어가야 한다.
+마지막에는 이런 일련의 동작들을 Deep한 개념으로 정리 해 보려고 한다.
 
-# Prototype Object
+# 천리길도 한걸음부터, Web 기본개념
 
-JS에서 객체가 생성되면 언제나 함수로써 생성이 된다.
+위에서 설명했듯 Web은 알아갈수록 더 알아야 할 것이 많아지는 필드 중 하나이다.
 
-```jsx
-function person() {} // 함수 선언
+도대체 우리가 쓰는 safari, chrome, firefox 같은 브라우저들은 지들이 뭘 안다고 naver를 보여주고 google을 보여주는걸까?
 
-const personObject = new person(); // 함수로 객체 인스턴스 생성
-```
+이런 천리길을 가기전에 기본 개념을 확실히 이해한다면, 본인의 사전만을 가지고 하나씩 내용을 추가하며 정상까지 도달 할 수 있을 것이다.
 
-그리고 우리가 편하게 쓰고있는 객체나 함수, 배열 생성도 예외는 아니다.
+### 호스팅
 
-겉으로 보기에는 Primitive type으로 선언 된 것 처럼 보이지만, 별칭처럼 사용 할 수 있게 된 것 뿐이지 실제 동작은 모두 Object 함수 호출로써 객체가 만들어지고 있다.
+호스팅(hosting)이란 서버 컴퓨터의 전체 또는 일정 공간을 이용할 수 있도록 임대해 주는 서비스이다.
 
-```jsx
-const obj = {};
-// const obj = new Object();
+즉, 호스팅 업체가 회사나 개인에게 항시 가동중인 서버를 임대 해 주고 그 대가를 받는 서비스가 호스팅이다.
 
-const arr = [];
-// const arr = new Array();
-```
+Web을 제공하는 회사들은 대부분 별도의 호스팅 서버를 운용하여 외부 요청에 응답한다. 즉, 24시간 꺼지지 않도록 해야하며 필요하다면 이중화구조로 장애 발생시에도 응답에 문제가 없도록 대처 할 수 있도록 구성해야 한다.
 
-이렇게 생성된 객체는 해당 객체의 Prototype Object 생성과 함께 연결되게 된다.
+최근에 Twitch에서 스트리머들의 생방송을 본 적이 있는데, 이때에도 A 라는 스트리머가 방송을 종료하며 B 라는 스트리머에게 시청자들을 **호스팅** 한다는 개념이 등장한다. 쉽게 이해하기 위해서는 영어 단어 그대로 `Host + ~ing` 이므로 주최(Host)하다 로 이해할 수도 있을 것 같다.
 
-![https://www.dropbox.com/s/ueiuxqgnyijcwjp/스크린샷 2020-06-09 07.41.22.png?raw=1](https://www.dropbox.com/s/ueiuxqgnyijcwjp/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202020-06-09%2007.41.22.png?raw=1)
+### IP
 
-by https://medium.com/@bluesh55 이하 동일
+Internet Protocol의 준말로 송신 호스트와 수신 호스트가 패킷 교환 네트워크에서 정보를 주고받는 데 사용하는 정보 위주의 규약(프로토콜, Protocol)이며, OSI 네트워크 계층에서 호스트의 주소지정과 패킷 분할 및 조립 기능을 담당한다.([위키](<[https://ko.wikipedia.org/wiki/%EC%9D%B8%ED%84%B0%EB%84%B7_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C](https://ko.wikipedia.org/wiki/인터넷_프로토콜)>))
 
-쉽게 말해서 객체 생성을 부모를 만들어주고(Prototype Object) 그 관계를 연결(Prototype)해 주는 것이다.
+그냥 쉽게 데이터가 어떤 규약에 의해 주고받아지고, 이를 분해해서 보내고 조립해서 사용자에게 보여주는 규약이다.
 
-생성된 Prototype Object는 `constructor`와 `__proto__` 를 갖게 된다.
+그리고 이를 기반으로 한 IP 주소는 장치들이 서로의 위치를 인식하고 통신하기 위해 사용하는 번호이다.
 
-`constructor`는 Prototype Object로 인스턴스 생성시 `new`로 객체 생성을 할 수 있게 해 주고,
+IP주소는 모든 네트워크를 지원하는 장비에 할당되어있다. 우리가 쓰는 스마트폰부터, 랩탑, 데스크탑, 심지어 애플워치나 인공지능 스피커까지 다양하게 있다.
 
-`__proto__` 는 인스턴스 생성시 Prototype Object와의 연결 관계를 만들어 준다.
+### DNS
 
-```jsx
-function Person() {} // 객체 생성 및 Product Object 연결
+위에서 설명한 IP 주소의 형태는 IPv4 기준으로 172.16.254.1 같은 표기법을 가지고 있는데, 사용자가 매번 이런 IP 주소를 외우기는 쉽지 않기 때문에 더 쉽게 IP 주소를 알아내개 위해 만든 것이 Domain이고 이를 관리하는 곳이 Domain Name Server(DNS)이다.
 
-Person.prototype.eyes = 2; // 객체의 prototype 조작
-Person.prototype.nose = 1;
+DNS의 주 기능은 특정 컴퓨터(또는 네트워크로 연결된 임의의 장치)의 주소를 찾기 위해, 사람이 이해하기 쉬운 도메인을 숫자로 된 식별 번호(IP 주소)로 변환해 준다.
 
-var kim  = new Person(); // constructor 예약어로 만든 인스턴스
-var park = new Person():
+DNS에는 우리가 아는 KT나 LG유플러스를 시작으로, CloudFlare나 Google 도 DNS 를 가지고 있다.
 
-console.log(kim.eyes); // 2
-```
+우리가 흔히 사용하는 www.google.com 이나 www.naver.com 도 Domain으로 DNS에서 IP 주소로 변환된다.
 
-# Prototype Link
+당연히 이런 이름들은 중복되서는 안되기 때문에 DNS에서는 이를 조절해준다. 또한 서로 다른 DNS로 정보를 전달하는 시간때문에 DNS 등록 직후 바로 조회되지 않고 각 DNS 업데이트 주기에 맞추어 1~2일 정도 있다가 사용 가능해지기도 한다.
 
-이 부분은 위에서 Prototype Object 의 부산물의 핵심이자 Prototype Chaining을 만들어주는 `__proto__` 의 설명이다.
+여담이지만, 좋은 이름엔 높은 가격이 붙어있어서 이런 도메인을 미리 사 놓고 도메인을 판다고 올려 놓은 뒤 재테크를 하는 사람도 있다고 한다.
 
-Prototype은 class와 비교하면 쉬운데, **class에서 생성된 변수나 함수들을 `상속` 해서 쓸 수 있게 하는 것 처럼 JS의 Prototype도 상속을 `__proto__` 로 구현 한 것이다.**
+### HTTP
 
-![](https://www.dropbox.com/s/eqtgc18dd1mlgo0/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202020-06-09%2008.46.44.png?raw=1)
+간단하게 Request와 Response를 통해 이뤄지는 통신 구조로 두 서버끼리 연락할 때 그 방식을 정해놓은 규약이라고 보면 된다.
 
-Prototype 속성은 함수만 갖지만 `__proto__` 는 모든 객체가 갖고있다.
+우리가 흔히 쓰는 GET, POST, DELETE, PATCH, PUT ··· 는 HTTP Request이고
 
-따라서 인스턴스 수준에서는 인스턴스의 Prototype Object의 변수를 가져다 쓰는것이 가능해지고, 만약 여기에도 존재하지 않는다면 Object Prototype Object까지 거슬러 올라가서 확인하고 값이 없다면 `undefined`를 리턴하는 구조이다.
+200 OK, 300 Rediredt, 404 Not Found 등은 HTTP Response의 종류이다.
 
-그래서 모든 객체는 Object의 손자이자 모든 객체는 Object가 최초의 인간 아담과 하와인 것이다.
+또한 무상태 Stateless이기 때문에 단순히 통신만으로는 로그인 정보, 방문 횟수 등의 브라우저 정보를 저장할 수 없고 이를 위해서는 쿠키나 세션을 이용해야만 한다.
 
-이런 다양한 Prototype 특징을 생각하면 String이나 Array로 생성된 인스턴스들의 prototype에 우리가 흔히 쓰는 toString, concat ··· 을 찾아 볼 수 있다.
+HTTP 규약은 전통적으로 HTTP/1.x을 사용되었지만 TLS 추가, 속도 및 기능이 개선된 HTTP/2를 사용하는 것이(아마 나도모르게 사용하고 있겠지만) 여러모로 더 낫다.
 
-![](https://www.dropbox.com/s/wrhei21s1421tbl/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202020-06-09%2008.44.40.png?raw=1)
+### ISP
 
-![](https://www.dropbox.com/s/0sv8w7kgww12x26/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202020-06-09%2008.44.13.png?raw=1)
+ISP(Internet service provider)는 인터넷에 접속하는 수단을 제공하는 주체를 가리키는 말이다.
 
-**이렇게 `__proto__` 를 통해 상위 프로토타입들과의 연결성이 Chain처럼 연결되어있어서 이를 `Prototype Chaining`이라고 한다.**
+쉽게 말해 Web(거미줄)을 물리적으로 만드는 곳이라고도 볼 수 있는데, 대륙간 통신이나 적도에서 극지방에 이르기까지 광섬유를 산넘고 바다건너 지하에다가 쭉 깔아두는 회사라고 보면 된다. 혹자는 위성 인터넷을 쓰면 되지 않느냐고하는데, 맞다. 위성 인터넷도 하나의 대안일 수 있지만 위성까지 왕복하는 거리가 광섬유로 연결하는 것보다 배이상 길기 때문에 지연시간도 거기에 정비례하게 되기 때문에 속도나 안정성 측면에서 광섬유로 연결하는것이 낫다.
 
-# 정리
+![img](https://t1.daumcdn.net/cfile/tistory/9978B53C5C21E3AE37)ISP도 다 같은 ISP가 아니고 Tier 1, 2, 3으로 구분된 제공자로 구분된다.
 
-- JS는 다중 패러다임, 동적 언어이기 때문에 보는 시각에 따라 다른 다형성을 갖는다.
+Tier 1은 주로 대륙간 트래픽 교환을 담당하고 Tier 2는 Tier 1과 3을 이어주는 중매및 피어링을 담당한다.(다른 ISP끼리 트래픽을 교환하는 것) 우리가 가장 가까이에서 볼 수 있는 Tier는 Tier 3으로 대한민국에서는 KT, Uplus 등이 이에 해당한다.
 
-- JS는 OOP(Object Oriented Programing)의 class를 묘사하기 위해 prototype의 개념이 생겼다.
-- Prototype이 생성되면 Prototype Object 와 Prototype Link가 함께 따라간다.
+# 클라이언트 to 클라이언트의 전체 흐름
 
-Prototype은 js이전에도 일상에서 종종 들어 볼 수 있는 말이니 쉽게 생각 하면 객체 생성시 그 객체에 대한 금형을 만드는 것을 prototype이라고 이해하고 이를 기반으로 인스턴스를 찍어내는 개념이라고 쉬울 것 같다.
+![](https://media.springernature.com/original/springer-static/image/chp%3A10.1007%2F978-981-13-1747-7_14/MediaObjects/464682_1_En_14_Fig1_HTML.png)
 
-JS의 Prototype에 대한 공부를 다소 미뤄왔는데 대충만 알고있었지 Prototype 이 생성되며 Prototype Object나 Prototype Link가 생성되는 부분까지 디테일하게 알지는 못해서 개념을 정립하고 나니 JS와 조금 더 친해진 것 같다는 생각이 든다.(나만 그러니.. 우리 친해지자 자스)
+<div align="center"><em style="color: gray;">생각보다 이것을 제대로 설명한 그림을 찾기가 힘들다..</em></div>
+
+전체적인 흐름은 사용자가 특정 도메인 주소를 주소창에 입력하는 것부터 시작해서 요청한 도메인의 컨텐츠가 화면에 나오는 것까지를 다룬다.
+
+다음은 www.google.com을 요청하는 것을 예시로 한다.
+
+### 웹 서버로 요청
+
+1. 사용자는 주소창에 www.google.com을 입력한다.
+2. 브라우저는 해당 도메인을 HTTP 규약에 맞춰 데이터 패킷을 준비한다.
+3. 준비된 패킷은 랜선 혹은 AP를 통해 해당 지역의 Tier 3 ISP 까지 전달된다.
+4. 이때 클라이언트는 빠른 응답을 위해 Cache Server에 캐싱 해 놓은 결과가 있는지 먼저 확인하고 만약 캐시된 데이터가 있으면 더 진행하지 않고 이를 다시 클라이언트에 되돌려준다.
+5. ISP는 DNS를 겸하기도 하기 때문에 요청으로 들어온 www.google.com의 IP 주소를 확인한다.
+6. 만약 해당 DNS에 정보가 없다면 다른 DNS 서버에 해당 도메인이 있는지 확인한다.
+7. `216.58.220.142` 가 www.google.com 의 IP 주소임을 브라우저가 알게 된다.
+8. 브라우저는 해당 IP 주소로 HTTP Request를 보낸다.
+9. Google의 WAS(Web Application Server)는 요청을 받아서 DB작업 필요하다면 이를 처리한다.
+10. 사용자 요청에 맞는 컨텐츠를 Status Code같은 내용과 함께 HTTP Response로 돌려 보낸다.
+11. 다시 수많은 Router들과 ISP를 거쳐 사용자의 브라우저에 컨텐츠가 도달한다.
+
+### 웹 서버로부터 응답 받고 브라우저가 하는 일
+
+1. 처음 브라우저가 응답을 받으면, 브라우저가 가지고있는 파서를 이용해 HTML문서를 브라우저가 이해할 수 있는 DOM 트리 형식으로 파싱한다.
+2. CSS를 파싱하여 스타일 구조체의 형식으로 만든다. 이를 CSSOM이라고 한다.
+3. DOM과 CSSOM을 실제 화면에 표현하기 위한 데이터 구조인 렌더링 트리로 변환한다.
+4. 해당 렌더링 트리를 그리고 화면에 표시한다.
+
+# Self Check
+
+1. 호스팅의 개념에 대해서 설명 해 주세요.
+2. IP 주소를 외우기 어려운 사용자를 위해 더 쉽게 외울 수 있는 이름을 사용하도록 한 서버는?
+3. ISP의 Tier 1이 하는 일은 무엇일까요?
+4. 브라우저가 HTML 문서를 사용자가 볼 수 있도록 해석하는 역할을 하는 것은 ?
+
+# Closing
+
+나름 상세하게 다룬다고 다뤘지만, 사실 위에서 설명한 내용 외에도 Router 끼리의 통신이나 TCP/IP, UDP, 3 hand shaking 등의 내용을 담기에는 너무 글이 길어질 것 같아 어느정도 갈무리하여 작성했다.
+
+핵심은 누군가 '웹이 동작하는 방식을 설명 해 주세요.'라고 했을때 그 과정을 보다 Deep 하게 설명을 할 수 있다면 이 글은 유의미할 것이다. 생각보다 ISP의 존재를 모르는 개발자가 많기 때문에(뭐 꼭 알아야 하나 싶기도하지만) 가볍게라도 알아두면 좋을 것이다.
+
+또한 이 글을 위해 여러가지 문서와 영상을 조사하면서 위성 인터넷이나 실제 WAS 서버의 동작 방식에 대해서도 접할 수 있었는데 이것은 기회가 닿는대로 또다른 post 하려고 한다.
 
 # Reference
 
-- [sik2.log](https://velog.io/@sik2/JS-CoreJavaScript-프로토타입-체이닝Prototype-Link-Prototype-Object)
-- [javascript 프로토타입 이해하기](https://medium.com/@bluesh55/javascript-prototype-이해하기-f8e67c286b67)
+- [ppl8709](<[https://velog.io/@ppl8709/WEB%EC%9D%B4-%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94-%EC%9B%90%EB%A6%AC](https://velog.io/@ppl8709/WEB이-동작하는-원리)>)
