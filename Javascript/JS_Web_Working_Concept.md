@@ -142,4 +142,4 @@ Tier 1은 주로 대륙간 트래픽 교환을 담당하고 Tier 2는 Tier 1과 
 
 # Reference
 
-- [ppl8709](<[https://velog.io/@ppl8709/WEB%EC%9D%B4-%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94-%EC%9B%90%EB%A6%AC](https://velog.io/@ppl8709/WEB이-동작하는-원리)>)
+- [https://velog.io/@ppl8709](https://velog.io/@ppl8709/WEB이-동작하는-원리)
