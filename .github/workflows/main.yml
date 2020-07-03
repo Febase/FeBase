@@ -22,7 +22,7 @@ jobs:
         
     # 팀원 자동 추가 액션
     - name: Contribute List
-      uses: akhilmhdh/contributors-readme-action@v1
+      uses: akhilmhdh/contributors-readme-action@v1.1
       env:
           GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
       with:
