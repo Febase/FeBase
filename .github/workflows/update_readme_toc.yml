@@ -2,7 +2,7 @@ name: update_md_title
 
 on:
   pull_request:
-    branches: [master]
+    branches: [ master ]
 
 jobs:
   build:
