@@ -9,9 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
         with:
-          persist-credentials: false
           fetch-depth: 0
       - name: Set up Python
         uses: actions/setup-python@v1
@@ -30,7 +29,7 @@ jobs:
           cat README.md
       - name: commit and push if README changed 
         run: |-
-          git config --local user.email "asdka4618@gmail.com"
-          git config --local user.name "snowjang24"
+          git config --global user.email "asdka4618@gmail.com"
+          git config --global user.name "snowjang24"
           git add README.md && git commit -m "Updated README"
-          git push origin HEAD:master
+          git push
