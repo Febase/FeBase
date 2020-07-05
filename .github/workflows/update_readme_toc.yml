@@ -9,10 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
         with:
-          persist-credentials: false
-          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
@@ -34,4 +33,4 @@ jobs:
           git config --local user.name "snowjang24"
           git add README.md
           git commit -m "Add changes"
-          git push
+          git status
