@@ -1,3 +1,10 @@
+---
+title: 자바스크립트 동작 원리
+date: 2020-06-25 00:00:00
+author: jinsunee
+category: Javascript
+---
+
 # 자바스크립트 동작 원리
 
 ## 브라우저 동작 원리

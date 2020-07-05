@@ -1,10 +1,10 @@
 class Header:
     def __init__(self, fp):
-        self.fp = fp
         self.header = {
             'count': 0,
             'data': {}
         }
+        self.fp = fp
 
     def update_data(self, key, value):
         header_data = self.header['data']
@@ -27,6 +27,7 @@ class Header:
 
     def set_header(self, header_list):
         self.header['data'] = dict.fromkeys(header_list, '')
+        self.header['data']['category'] = 'etc'
         self.header['count'] = len(header_list)
         read_count = 3
         read_state = 'pending'

@@ -1,4 +1,6 @@
 import re
+import os.path
+from datetime import datetime
 
 
 class Rmd:
@@ -8,14 +10,25 @@ class Rmd:
             r"<!\-\- toc starts \-\->.*<!\-\- toc ends \-\->", re.DOTALL)
         self.toc = ["<!-- toc starts -->"]
 
+    def set_default_value(self, header, path):
+        new_header = header.copy()
+        if header['title'] == '':
+            new_header['title'] = path
+        if header['date'] == '':
+            new_header['date'] = datetime.today().strftime('%Y-%m-%d')
+
+        return new_header.copy()
+
     def get_toc_row(self, toc):
-        header = toc['header']
-        date = re.search(r"([0-9]{4}\-[0-9]{2}\-[0-9]{2})", header['date'])
+        header_raw = toc['header']
+        header = self.set_default_value(header_raw, toc['path'])
+        date_matched = re.search(
+            r"([0-9]{4}\-[0-9]{2}\-[0-9]{2})", header['date'])
+        date = date_matched.group() if date_matched else ""
         row = "* [{title}]({url}) - {date}".format(
             title=header['title'],
             url=toc['url'],
-            date=date.group()
-        )
+            date=date)
         return row
 
     def update_toc(self, toc_data):
