@@ -2,5 +2,5 @@
 *.png
 *.jpeg
 *.gif
-__pychache__/*
-lib/__pychache__/*
+__pycache__/*
+lib/__pycache__/*
