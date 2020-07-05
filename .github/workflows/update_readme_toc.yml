@@ -35,7 +35,7 @@ jobs:
           git config --local user.name "snowjang24"
           git add README.md
           git commit -m "Add changes"
-          git push https://$USER_NAME:$REPO_KEY@github.com/Febase/FeBase.git $GITHUB_REF
+          git push https://$USER_NAME:$REPO_KEY@github.com/Febase/FeBase.git
         env:
           REPO_KEY: ${{ secrets.GITHUB_TOKEN }}
           USER_NAME: SoonHoJang
