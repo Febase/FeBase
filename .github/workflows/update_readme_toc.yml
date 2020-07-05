@@ -27,7 +27,7 @@ jobs:
       - name: Update README
         run: |-
           python update_readme.py
-          cat README.md
+          cat README.m
       - name: Commit files
         run: |
           git config --local user.email "asdka4618@gmail.com"
@@ -37,4 +37,4 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.README_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
