@@ -1,7 +1,7 @@
 name: update_md_title
 
 on:
-  pull_request:
+  push:
     branches: [ master ]
 
 jobs:
@@ -31,12 +31,6 @@ jobs:
           cat README.md
       - name: Commit files
         run: |-
-          git config --local user.email "asdka4618@gmail.com"
-          git config --local user.name "snowjang24"
           git add README.md
           git commit -m "Add changes"
-          git push https://$USER_NAME:$REPO_KEY@github.com/Febase/FeBase.git HEAD:origin/master
-        env:
-          REPO_KEY: ${{ secrets.README_TOKEN }}
-          USER_NAME: SoonHoJang
-          GITHUB_REF: ${{ github.event.pull_request.head.sha }}
+          git push
