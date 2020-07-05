@@ -28,11 +28,19 @@ jobs:
           python update_readme.py
           cat README.md
       - name: Commit files
-        run: |
+        run: |-
           git config --local user.email "asdka4618@gmail.com"
           git config --local user.name "snowjang24"
           git add README.md
           git commit -m "Add changes"
-          git push https://snowjang24:${{README_TOKEN}}@github.com/Febase/FeBase.git --all
-
+      - name: Push changed README
+        run: |
+          curl --request PUT \
+          --url https://api.github.com/repos/${{ github.repository }}/contents/README.md \
+          --header 'authorization: token ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'content-type: application/json' \
+          --data '{
+          "message": "README table of contents Updated",
+          "sha": ${{ github.sha }}
+          }'
 
