@@ -52,6 +52,7 @@
                 <sub><b>Jinsun Park</b></sub>
             </a>
         </td>
+<<<<<<< HEAD
         <td align="center">
             <a href="https://github.com/alledy">
                 <img src="https://avatars3.githubusercontent.com/u/46309894?v=4" width="100;" alt="alledy"/>
@@ -80,6 +81,8 @@
                 <sub><b>Jinsun Park</b></sub>
             </a>
         </td>
+=======
+>>>>>>> merge conflict
     </tr>
 </table>
 
