@@ -1,4 +1,9 @@
-Author: [@samslow](https://github.com/samslow)
+---
+title: 그냥 ES11인가 뭐시깽이 쓰면 되는거 아님?
+date: 2020-06-25 00:00:00
+author: samslow
+category: Javascript
+---
 
 - javascript는 ES6 이전과 이후로 달라진 내용을 하나씩 톺아보고 최신 표준에 대해 알아봅니다.
   - ECMAScript 에 대해 설명 할 수 있습니다.

@@ -6,7 +6,7 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -17,11 +17,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
-        
-    # 팀원 자동 추가 액션
-    - name: Contribute List
-      uses: akhilmhdh/contributors-readme-action@v1
-      env:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # 팀원 자동 추가 액션
+      - name: Contribute List
+        uses: akhilmhdh/contributors-readme-action@v1
+        env:
           GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}

@@ -1,4 +1,9 @@
-Author: [@samslow](https://github.com/samslow)
+---
+title: Web 기본부터 Alaboza
+date: 2020-07-02 00:00:00
+author: samslow
+category: Javascript
+---
 
 - Client가 버튼을 누른 결과가 Server를 거쳐 다시 Client에 오는 과정을 설명합니다.
   - Web에서 사용되는 기본 개념들에 대해서 알 수 있습니다.
