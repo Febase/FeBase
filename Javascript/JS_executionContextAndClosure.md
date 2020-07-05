@@ -1,11 +1,8 @@
----
-title: 실행 컨텍스트와 클로저에 대해서
-date: 2020-07-02 00:00:00
-author: nailerHeum
-category: Javascript
----
+Author: [@nailerHeum](https://github.com/nailerHeum)
 
 # 실행 컨텍스트와 클로저에 대해서
+
+
 
 ## Scope는 변수가 참조될 수 있는 범위이다
 

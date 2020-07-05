@@ -1,9 +1,4 @@
----
-title: Garbage Collector
-date: 2020-07-02 00:00:00
-author: snowjang24
-category: Javascript
----
+Author : @snowjang24
 
 # Garbage Collector
 

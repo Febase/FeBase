@@ -20,7 +20,7 @@ class Rmd:
 
     def update_toc(self, toc_data):
         for category in toc_data.keys():
-            self.toc.append("## {}\n".format(category))
+            self.toc.append("### {}\n".format(category))
             toc_list = sorted(toc_data[category],
                               key=lambda toc: toc['header']['date'], reverse=True)
             for toc in toc_list:
