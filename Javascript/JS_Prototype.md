@@ -1,4 +1,9 @@
-Author: [@samslow](https://github.com/samslow)
+---
+title: 따라쟁이 셋째 JS가 지키고 싶었던 것 - Prototype
+date: 2020-06-19 00:00:00
+author: samslow
+category: Javascript
+---
 
 - 이 글은 JS Prototype Chaining을 설명하기위해 Prototype Object, Prototype Link을 설명합니다.
 
