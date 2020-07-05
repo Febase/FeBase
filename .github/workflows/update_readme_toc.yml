@@ -31,6 +31,6 @@ jobs:
         run: |-
           git config --global user.email "asdka4618@gmail.com"
           git config --global user.name "snowjang24"
-          git remote set-url origin https://x-access-token:${secrets.README_TOKEN}@github.com/Febase/FeBase.git
+          git remote set-url origin https://x-access-token:${{secrets.README_TOKEN}}@github.com/Febase/FeBase.git
           git diff --quiet && git diff --staged --quiet || (git add README.md && git commit -m "Updated README")
           git push origin master
