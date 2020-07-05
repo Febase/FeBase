@@ -34,4 +34,7 @@ jobs:
           git config --global user.email "asdka4618@gmail.com"
           git config --global user.name "snowjang24"
           git diff --quiet || (git add README.md && git commit -m "Updated README")
-          git push
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+         github_token: ${{ secrets.README_TOKEN }}
