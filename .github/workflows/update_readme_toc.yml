@@ -13,6 +13,7 @@ jobs:
         with:
           repository: ${{ github.repository }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.pull_request.head.sha }}
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
@@ -34,8 +35,8 @@ jobs:
           git config --local user.name "snowjang24"
           git add README.md
           git commit -m "Add changes"
-          git push https://$USER_NAME:$REPO_KEY@github.com/$REPO_NAME.git
+          git push https://$USER_NAME:$REPO_KEY@github.com/Febase/FeBase.git $GITHUB_REF
         env:
           REPO_KEY: ${{ secrets.GITHUB_TOKEN }}
-          USER_NAME: snowjang24
-          REPO_NAME: ${{ github.repository }}
+          USER_NAME: SoonHoJang
+          GITHUB_REF: ${{ github.event.pull_request.head.sha }}
