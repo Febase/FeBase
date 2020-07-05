@@ -28,7 +28,7 @@ jobs:
         run: |-
           python update_readme.py
           cat README.md
-      - name: Commit and push if README changed
+      - name: commit and push if README changed 
         run: |-
           git diff
           git config --global user.email "asdka4618@gmail.com"
