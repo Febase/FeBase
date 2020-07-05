@@ -11,7 +11,8 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          repository: ${{ github.repository }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
@@ -33,14 +34,8 @@ jobs:
           git config --local user.name "snowjang24"
           git add README.md
           git commit -m "Add changes"
-      - name: Push changed README
-        run: |
-          curl --request PUT \
-          --url https://api.github.com/repos/${{ github.repository }}/contents/README.md \
-          --header 'authorization: token ${{ secrets.GITHUB_TOKEN }}' \
-          --header 'content-type: application/json' \
-          --data '{
-          "message": "README table of contents Updated",
-          "sha": ${{ github.sha }}
-          }'
-
+          git push https://$USER_NAME:$REPO_KEY@github.com/$REPO_NAME.git
+        env:
+          REPO_KEY: ${{ secrets.GITHUB_TOKEN }}
+          USER_NAME: snowjang24
+          REPO_NAME: ${{ github.repository }}
