@@ -27,14 +27,13 @@ jobs:
       - name: Update README
         run: |-
           python update_readme.py
-          cat README.m
+          cat README.md
       - name: Commit files
         run: |
           git config --local user.email "asdka4618@gmail.com"
           git config --local user.name "snowjang24"
           git add README.md
           git commit -m "Add changes"
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git status
+          git branch
+          git remote -v
