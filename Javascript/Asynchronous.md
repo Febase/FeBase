@@ -1,4 +1,10 @@
-Author: @snowjang24
+---
+title: 비동기(Asynchronous)
+date: 2020-06-19 00:00:00
+author: snowjang24
+category: Javascript
+---
+
 # 비동기(Asynchronous)
 
 ## 여는 말
