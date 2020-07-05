@@ -1,19 +1,16 @@
 name: update_md_title
 
 on:
-  pull_request:
+  push:
     branches: [ master ]
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
+      - name: Check out repo
         uses: actions/checkout@v2
         with:
-          repository: ${{ github.repository }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0  
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
@@ -31,12 +28,8 @@ jobs:
           cat README.md
       - name: Commit files
         run: |-
-          git config --local user.email "asdka4618@gmail.com"
-          git config --local user.name "snowjang24"
-          git add README.md
-          git commit -m "Add changes"
-          git push https://$USER_NAME:$REPO_KEY@github.com/Febase/FeBase.git HEAD:origin/master
-        env:
-          REPO_KEY: ${{ secrets.README_TOKEN }}
-          USER_NAME: SoonHoJang
-          GITHUB_REF: ${{ github.event.pull_request.head.sha }}
+          git diff
+          git config --global user.email "readme-bot@example.com"
+          git config --global user.name "README-bot"
+          git diff --quiet || (git add README.md && git commit -m "Updated README")
+          git push
