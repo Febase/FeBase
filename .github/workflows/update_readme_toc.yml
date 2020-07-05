@@ -34,6 +34,5 @@ jobs:
           git config --local user.name "snowjang24"
           git add README.md && git commit -m "Updated README"
       - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-         github_token: ${{ secrets.README_TOKEN }}
+        run: |-
+          git push origin HEAD:master
