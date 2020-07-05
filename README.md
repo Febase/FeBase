@@ -52,23 +52,6 @@
                 <sub><b>Jinsun Park</b></sub>
             </a>
         </td>
-<<<<<<< HEAD
-        <td align="center">
-            <a href="https://github.com/alledy">
-                <img src="https://avatars3.githubusercontent.com/u/46309894?v=4" width="100;" alt="alledy"/>
-                <br />
-                <sub><b>Dayoung Kang</b></sub>
-            </a>
-        </td>
-        <td align="center">
-            <a href="https://github.com/jinsunee">
-                <img src="https://avatars3.githubusercontent.com/u/31176502?v=4" width="100;" alt="jinsunee"/>
-                <br />
-                <sub><b>Jinsun Park</b></sub>
-            </a>
-        </td>
-=======
->>>>>>> 839e2ca4fdf493bd1c683eec06e2c410e132bb81
     </tr>
 </table>
 
