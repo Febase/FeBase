@@ -33,6 +33,4 @@ jobs:
           git config --local user.email "asdka4618@gmail.com"
           git config --local user.name "snowjang24"
           git add README.md && git commit -m "Updated README"
-      - name: Push changes
-        run: |-
           git push origin HEAD:master
