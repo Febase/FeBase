@@ -34,4 +34,4 @@ jobs:
           git config --local user.name "snowjang24"
           git add README.md
           git commit -m "Add changes"
-          git push origin "https://${{GITHUB_TOKEN}}:x-oauth-basic@github.com/Febase/FeBase"
+          git push
