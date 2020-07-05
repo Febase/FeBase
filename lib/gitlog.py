@@ -14,10 +14,8 @@ class Gitlog:
 
     def check_status(self):
         repo = git.Repo(self.repo, odbt=git.GitDB)
-        for item in repo.index.diff(None):
-            a_path = item.a_path
-            b_path = item.b_path
-            print(a_path + "->" + b_path)
+        changed_files = [item.a_path for item in repo.index.diff(None)]
+        print(changed_files)
         # commits = reversed(list(repo.iter_commits(ref)))
         # for commit in commits:
         #     affected_files = list(commit.stats.files)

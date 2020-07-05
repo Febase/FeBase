@@ -1,4 +1,4 @@
-# FeBase - Front-end Base
+# FeBase - Frontend Base
 
 프론트 엔드 개발 지식을 위한 기본을 배우는 시간! :white_check_mark:	
 
@@ -7,14 +7,14 @@
 <!-- toc starts -->
 <!-- toc ends -->
 
-# HandBook
+## HandBook
 
 * [FE Developer Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/src/translations/korean#JS-%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8)
 
 * [Interview_Question_for_Beginner](https://github.com/JaeYeopHan/Interview_Question_for_Beginner)
 
 
-# Contributors :sparkles:
+## Contributors :sparkles:
 <table>
     <tr>
         <td align="center">
@@ -48,6 +48,7 @@
     </tr>
 </table>
 
+## How to
 
 ### Pull Request 이후
 
