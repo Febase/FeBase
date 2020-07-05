@@ -33,4 +33,6 @@ jobs:
           git config --local user.name "snowjang24"
           git add README.md
           git commit -m "Add changes"
-          git push origin HEAD:${{ github.event.pull_request.head.sha }}
+          git push https://snowjang24:${{README_TOKEN}}@github.com/Febase/FeBase.git --all
+
+
