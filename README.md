@@ -52,7 +52,6 @@
                 <sub><b>Jinsun Park</b></sub>
             </a>
         </td>
-        <td align="center">
     </tr>
 </table>
 
