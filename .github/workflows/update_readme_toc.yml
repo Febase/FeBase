@@ -33,4 +33,4 @@ jobs:
           git config --local user.name "snowjang24"
           git add README.md
           git commit -m "Add changes"
-          git push
+          git push origin HEAD:${{ github.event.pull_request.head.sha }}
