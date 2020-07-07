@@ -133,4 +133,4 @@ JIT은 들어는 보았지만, 어떤식으로 동작하는지는 몰랐었는�
 
 # Reference
 
-- [TOAST 기술 블로그](
+- [TOAST 기술 블로그](https://meetup.toast.com/posts/77)
