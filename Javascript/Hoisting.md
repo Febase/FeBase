@@ -1,4 +1,9 @@
-Author: [Dayoung](https://github.com/alledy/)
+---
+title: "호이스팅"
+categories: Javascript
+date: 2020-06-30 00:00:00
+author: dayoung
+---
 
 # 호이스팅
 
