@@ -29,7 +29,7 @@ class Rmd:
         author_md = "[@{author}](https://github.com/{author})".format(
             author=header['author'])
         row = "[{title}]({url}) | {date} | {author}".format(
-            title=header['title'],
+            title=title,
             url=toc['url'],
             date=date,
             author=author_md)
