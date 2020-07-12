@@ -19,8 +19,6 @@
 ### JAVASCRIPT
 
 * [Front to the ES2020](https://github.com/Febase/FeBase/blob/master/Javascript/Javascript_ES2020.md) - 2020-07-15
-* [신상 ES2020 알아보기](https://github.com/Febase/FeBase/blob/master/Javascript/Javascript ES2020.md) - 2020-07-08
->>>>>>> 620aa6ac562634aa24593a115033ff7cdd986322
 * [Web 기본부터 Alaboza](https://github.com/Febase/FeBase/blob/master/Javascript/JS_Web_Working_Concept.md) - 2020-07-02
 * [Garbage Collector](https://github.com/Febase/FeBase/blob/master/Javascript/Garbage_Collector.md) - 2020-07-02
 * [Javascript 데이터 타입](https://github.com/Febase/FeBase/blob/master/Javascript/JS_DataType.md) - 2020-06-25
