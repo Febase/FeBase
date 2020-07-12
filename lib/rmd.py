@@ -22,6 +22,7 @@ class Rmd:
     def get_toc_row(self, toc):
         header_raw = toc['header']
         header = self.set_default_value(header_raw, toc['path'])
+        title = header['title'].lstrip('"').rstrip('"')
         date_matched = re.search(
             r"([0-9]{4}\-[0-9]{2}\-[0-9]{2})", header['date'])
         date = date_matched.group() if date_matched else ""
