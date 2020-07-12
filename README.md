@@ -5,11 +5,22 @@
 <!-- 이 항목은 절대 건드리지 말 것(자동화) -->
 ## :file_folder: Table Of Contents
 <!-- toc starts -->
+<<<<<<< HEAD
 ### JAVASCRIPT
 
 * [0.1 + 0.2 !== 0.3 인 이유 (ieee 754)](https://github.com/Febase/FeBase/blob/master/Javascript/JS_Number_Floating_Point.md) - 2020-07-08
 * [Javascript var, let/const and Temporary Dead Zone](https://github.com/Febase/FeBase/blob/master/Javascript/JS_variable_tdz.md) - 2020-07-08
 * [Javascript 스코프](https://github.com/Febase/FeBase/blob/master/Javascript/JS_Scope.md) - 2020-07-02
+=======
+### ETC
+
+* [Javascript/JS_executionContextAndClosure.md](https://github.com/Febase/FeBase/blob/master/Javascript/JS_executionContextAndClosure.md) - 2020-07-12
+* [Javascript/Hoisting.md](https://github.com/Febase/FeBase/blob/master/Javascript/Hoisting.md) - 2020-07-12
+### JAVASCRIPT
+
+* [Front to the ES2020](https://github.com/Febase/FeBase/blob/master/Javascript/Javascript_ES2020.md) - 2020-07-15
+* [신상 ES2020 알아보기](https://github.com/Febase/FeBase/blob/master/Javascript/Javascript ES2020.md) - 2020-07-08
+>>>>>>> 620aa6ac562634aa24593a115033ff7cdd986322
 * [Web 기본부터 Alaboza](https://github.com/Febase/FeBase/blob/master/Javascript/JS_Web_Working_Concept.md) - 2020-07-02
 * [Garbage Collector](https://github.com/Febase/FeBase/blob/master/Javascript/Garbage_Collector.md) - 2020-07-02
 * [Javascript 데이터 타입](https://github.com/Febase/FeBase/blob/master/Javascript/JS_DataType.md) - 2020-06-25
