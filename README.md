@@ -19,6 +19,7 @@
 [Garbage Collector](https://github.com/Febase/FeBase/blob/master/Javascript/Garbage_Collector.md)| 2020-07-02 | [@snowjang24](https://github.com/snowjang24)
 ["호이스팅"](https://github.com/Febase/FeBase/blob/master/Javascript/Hoisting.md)| 2020-06-30 | [@dayoung](https://github.com/dayoung)
 [Javascript 데이터 타입](https://github.com/Febase/FeBase/blob/master/Javascript/JS_DataType.md)| 2020-06-25 | [@jinsunee](https://github.com/jinsunee)
+["Javascript 기초 - JavaScript 개발한다면 JIT은 알아야JIT"](https://github.com/Febase/FeBase/blob/master/Javascript/JIT.md)| 2020-06-25 | [@samslow](https://github.com/samslow)
 [자바스크립트 동작 원리](https://github.com/Febase/FeBase/blob/master/Javascript/JS_Basic_movement.md)| 2020-06-25 | [@jinsunee](https://github.com/jinsunee)
 [그냥 ES11인가 뭐시깽이 쓰면 되는거 아님?](https://github.com/Febase/FeBase/blob/master/Javascript/JS_Es6_Spec.md)| 2020-06-25 | [@samslow](https://github.com/samslow)
 [ES Module에 대해서](https://github.com/Febase/FeBase/blob/master/Javascript/JS_ES_Module.md)| 2020-06-25 | [@nailerHeum](https://github.com/nailerHeum)
@@ -29,7 +30,6 @@
 
 게시물 | 날짜 | 글쓴이
 ---|---|---
-["Javascript 기초 - JavaScript 개발한다면 JIT은 알아야JIT"](https://github.com/Febase/FeBase/blob/master/Javascript/JIT.md)| 2020-06-25 | [@samslow](https://github.com/samslow)
 [Javascript/JS_executionContextAndClosure.md](https://github.com/Febase/FeBase/blob/master/Javascript/JS_executionContextAndClosure.md)| 2020-07-12 | [@](https://github.com/)
 [Javascript/JS_Iterator_Generator.md](https://github.com/Febase/FeBase/blob/master/Javascript/JS_Iterator_Generator.md)| 2020-07-12 | [@](https://github.com/)
 <!-- toc ends -->
