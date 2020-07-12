@@ -1,6 +1,6 @@
 ---
 title: "호이스팅"
-categories: Javascript
+category: Javascript
 date: 2020-06-30 00:00:00
 author: dayoung
 ---

@@ -1,6 +1,6 @@
 ---
 title: "V8 엔진"
-categories: Javascript
+category: Javascript
 date: 2020-07-07 00:00:00
 author: dayoung
 ---
