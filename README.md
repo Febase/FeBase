@@ -7,10 +7,12 @@
 <!-- toc starts -->
 ### ETC
 
-* [Javascript/JS_executionContextAndClosure.md](https://github.com/Febase/FeBase/blob/master/Javascript/JS_executionContextAndClosure.md) - 2020-07-05
-* [Javascript/Hoisting.md](https://github.com/Febase/FeBase/blob/master/Javascript/Hoisting.md) - 2020-07-05
+* [Javascript/JS_executionContextAndClosure.md](https://github.com/Febase/FeBase/blob/master/Javascript/JS_executionContextAndClosure.md) - 2020-07-12
+* [Javascript/Hoisting.md](https://github.com/Febase/FeBase/blob/master/Javascript/Hoisting.md) - 2020-07-12
 ### JAVASCRIPT
 
+* [Front to the ES2020](https://github.com/Febase/FeBase/blob/master/Javascript/Javascript_ES2020.md) - 2020-07-15
+* [신상 ES2020 알아보기](https://github.com/Febase/FeBase/blob/master/Javascript/Javascript ES2020.md) - 2020-07-08
 * [Web 기본부터 Alaboza](https://github.com/Febase/FeBase/blob/master/Javascript/JS_Web_Working_Concept.md) - 2020-07-02
 * [Garbage Collector](https://github.com/Febase/FeBase/blob/master/Javascript/Garbage_Collector.md) - 2020-07-02
 * [자바스크립트 동작 원리](https://github.com/Febase/FeBase/blob/master/Javascript/JS_Basic_movement.md) - 2020-06-25
