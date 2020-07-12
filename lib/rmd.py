@@ -25,15 +25,20 @@ class Rmd:
         date_matched = re.search(
             r"([0-9]{4}\-[0-9]{2}\-[0-9]{2})", header['date'])
         date = date_matched.group() if date_matched else ""
-        row = "* [{title}]({url}) - {date}".format(
+        author_md = "[@{author}](https://github.com/{author})".format(
+            author=header['author'])
+        row = "[{title}]({url})| {date} | {author}".format(
             title=header['title'],
             url=toc['url'],
-            date=date)
+            date=date,
+            author=author_md)
         return row
 
     def update_toc(self, toc_data):
         for category in toc_data.keys():
-            self.toc.append("### {}\n".format(category))
+            self.toc.append("\n### {}\n".format(category))
+            self.toc.append("게시물 | 날짜 | 글쓴이")
+            self.toc.append("---|---|---")
             toc_list = sorted(toc_data[category],
                               key=lambda toc: toc['header']['date'], reverse=True)
             for toc in toc_list:
