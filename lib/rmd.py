@@ -27,7 +27,7 @@ class Rmd:
         date = date_matched.group() if date_matched else ""
         author_md = "[@{author}](https://github.com/{author})".format(
             author=header['author'])
-        row = "[{title}]({url})| {date} | {author}".format(
+        row = "[{title}]({url}) | {date} | {author}".format(
             title=header['title'],
             url=toc['url'],
             date=date,
