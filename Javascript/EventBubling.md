@@ -19,13 +19,13 @@ JS 공부를 하면서 기초를 배우고 있지만 이벤트 버블링 외 2�
 
 JS의 기본 이벤트 전파 방식은 이벤트 버블링인것을 알았으면서도, 문제를 파악하는데 수 시간을 삽질했다.(물론 다른 이유도 있지만) 이론과 실제가 다르고, 학교 공부와 실무는 다르며 내가 이해하는 것과 사용하는 것은 정말 다르다.
 
-오늘 이 포스트에서는 내가 아는 것 이라도 기초는 여러번 봐도 부족하다는 마음으로 따라와 주시길 바란다.
+늘 이 포스트에서는 내가 아는 것 이라도 기초는 여러번 봐도 부족하다는 마음으로 따라와 주시길 바란다.
 
 이 포스트는 내가 한 실수를 예제로 진행하려고 한다.
 
 # JS 이벤트 핸들러 ㄷㄷㄷㅈ
 
-![img](https://upload3.inven.co.kr/upload/2020/05/16/bbs/i015459245503.gif)
+![img](https://i.ytimg.com/vi/YV5OzhMaZYk/maxresdefault.jpg)
 
 <div align="center" style="color: gray"> JS event 두둥등장!</div>
 
@@ -206,9 +206,9 @@ icon에 매번 `addEventListener` 를 추가해 이벤트를 트리거 해주고
 
 이 포스트를 보았으니 이제 면접에서도 잘 대답 할 수 있어야 하고 실제 코드를 작성 할 때도 이벤트 관련해서 실수하는 일이 없어야 한다. 사실 이렇게 말은 해도 할 수 있을지는 모르곘다. 그래서 기초가 중요한 것 같다. 지루하고 뻔해도 그것을 설명하고 사용하는 것은 별개의 문제이다.
 
-Javascript 기초는 Fun하고 Cool하게 계속 될 것이다. 그것이 바로 기술 블로그니깐(끄덕)
+Javascript 기초는 Fun하고 Cool하게 계속 될 것이다. 기술 블로그는 계속되어야 하니깐(끄덕)
 
-![고이즈미 신지로(펀쿨섹) 끄덕](https://cdn.clien.net/web/api/file/F01/10025477/2d27f2ffecf74a.gif?w=780&h=30000&gif=false)
+![MarvelousQueasyCavy](https://thumbs.gfycat.com/MarvelousQueasyCavy-size_restricted.gif)
 
 # Reference
 
