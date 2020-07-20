@@ -66,13 +66,6 @@
             </a>
         </td>
         <td align="center">
-            <a href="https://github.com/alledy">
-                <img src="https://avatars3.githubusercontent.com/u/46309894?v=4" width="100;" alt="alledy"/>
-                <br />
-                <sub><b>Dayoung Kang</b></sub>
-            </a>
-        </td>
-        <td align="center">
             <a href="https://github.com/jinsunee">
                 <img src="https://avatars3.githubusercontent.com/u/31176502?v=4" width="100;" alt="jinsunee"/>
                 <br />
