@@ -30,8 +30,8 @@
 
 게시물 | 날짜 | 글쓴이
 ---|---|---
-[Javascript/JS_executionContextAndClosure.md](https://github.com/Febase/FeBase/blob/master/Javascript/JS_executionContextAndClosure.md)| 2020-07-12 | [@](https://github.com/)
-[Javascript/JS_Iterator_Generator.md](https://github.com/Febase/FeBase/blob/master/Javascript/JS_Iterator_Generator.md)| 2020-07-12 | [@](https://github.com/)
+[Javascript/JS_executionContextAndClosure.md](https://github.com/Febase/FeBase/blob/master/Javascript/JS_executionContextAndClosure.md)| 2020-07-20 | [@](https://github.com/)
+[Javascript/JS_Iterator_Generator.md](https://github.com/Febase/FeBase/blob/master/Javascript/JS_Iterator_Generator.md)| 2020-07-20 | [@](https://github.com/)
 <!-- toc ends -->
 
 ## HandBook
