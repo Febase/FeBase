@@ -42,11 +42,9 @@ Ecma International은 JS에 대한 규격 외에도 아래와 같이 다양한 �
 
 Javasciprt는 이러한 ECMA Script의 사양을 따라 매번 새로운 기능을 제작하여 배포한다. 그렇기 때문에 새로운 자바스크립트의 버젼 이름은 ES를 기반으로 하기 때문에 Javascript ES5, Javascript ES6와 같이 불린다.
 
-그간 다양한 버젼이 배포되었는데 우리가 주로 아는 ES6까지는 ES6와 같은 넘버링을 쓰다가 ES7에 해당하는 ES2016에 이르러 앞으로 매년 기능을 업데이트 하기로 결정되어 새로운 버젼이 배포되는 년도를 따라 넘버링을 하기로 바뀌었다.
+그간 다양한 버젼이 배포되었는데 우리가 주로 아는 ES6까지는 ES6와 같은 넘버링을 쓰다가 ES7에 해당하는 ES2016에 이르러, 앞으로 매년 기능을 업데이트 하기로 결정되었다. 이에 따라, 넘버링 역시 새로운 버젼이 배포되는 년도를 따라가기로 바뀌었다. 그렇기 때문에, ES6 이후의 버젼은 ES7과 같은 넘버링이 아닌 ES2016, ES2017, ... , ES2020과 같이 부르면 된다.
 
-따라서 ES6 이후의 버젼은 ES7과 같은 넘버링이 아닌 ES2016, ES2017, ... , ES2020과 같이 부르면 된다.
-
-아래는 ES2020 이전, 각 버젼별 새로운 기능들을 나열한 것이다.
+아래는 ES2020 이전, 각 버젼별 새로운 기능들을 나열한 것이다. 이미 쓰고 있는 것도 있을 것이고 아직 생소한 문법들도 있을 것이다. 
 
 #### ES2016
 
@@ -75,18 +73,15 @@ Javasciprt는 이러한 ECMA Script의 사양을 따라 매번 새로운 기능�
 
 #### ES2019
 
-- Array#{flat,flatMap}
+- Array#{flat, flatMap}
 - Object.fromEntries
-- String#{trimStart,trimEnd}
+- String#{trimStart, trimEnd}
 - Symbol#description
 - try { } catch {}, optional binding
 - JSON ⊂ ECMAScript
 - well-formed JSON.stringify
 - stable Array#sort
 - revised Function#toString
-- BigInt primitive type (stage 3)
-- Dynamic import (stage 3)
-- Standardized globalThis object (stage 3)
 
 위의 새로운 기능들은 [노드그린](https://node.green/) 에서 각 노드 버젼별 사용 가능 여부를 확인할 수 있다.
 
@@ -109,21 +104,32 @@ Javasciprt는 이러한 ECMA Script의 사양을 따라 매번 새로운 기능�
 
 ### String.prototype.matchAll
 
-`matchAll()` 메서드의 경우 정규 표현식과 일치하는 모든 문자열을 결과로 반환한다. 여기에는 capturing group또한 포함되어 있다. `match`가 있는데 굳이 `matchAll`이 나온 이유에 대해 알아보자.
+`matchAll()` 메서드의 경우 정규 표현식과 일치하는 모든 문자열을 결과로 반환한다. 여기에는 capturing group 또한 포함되어 있다. 
 
 ```javascript
 const regex = /t(e)(st(\d?))/g;
 const string = 'test1test2';
 const results = string.match(regex);
-console.log(results);
-// → ['test1', 'test2']
+const resultsAll = [...string.matchAll(regex)];
+console.log(results); // ['test1', 'test2']
+console.log(resultsAll); // [["test1", "e", "st1", "1"], ["test2", "e", "st2", "2"]]
 ```
-
-
 
 ### Dynamic import()
 
-Dynamic `import()`의 경우 JS 파일을 동적으로 import할 수 있게 한다. 기존에는 Webpack과 Babel을 통해서 가능했던 기능이 이제는 네이티브 기능으로 들어온 것이다. Dynamic `import()`의 경우 반드시 `async/await`와 함께 사용하여야 한다. 코드 스플리팅에 좀 더 유용해졌다. 또한, `if-else`와 같은 분기문을 통해 조건에 따라 쉽게 모듈을 불러 올 수 있게 되었다.
+Dynamic `import()`의 경우 JS 파일을 동적으로 import할 수 있게 한다. 기존에는 Webpack과 Babel을 통해서 가능했던 기능이 이제는 네이티브 기능으로 들어왔다.
+
+기존의 `import`는 아래와 같이 사용한다. 이러한 정적 방식의 `import` 문은 함수 호출 결과로 경로를 지정할수 없을 뿐만 아니라, `if`문과 같은 분기문에서의 사용이 불가능하다.
+
+```javascript
+import module from ModuleName; 🙆‍♂️
+import module from getModuleName();🙅‍♂️
+if (true) { 
+  import module from ModuleName;🙅‍♂️
+}
+```
+
+ES2020의 `import()` 는 위의 한계점들을 가능하게 한다. 기본적인 사용은 아래와 같다. 반드시 `async/await`와 같은 비동기 처리 문법을 함께 사용해야 한다.
 
 ```javascript
 if (res.status === 'ok') {
@@ -132,9 +138,21 @@ if (res.status === 'ok') {
 }
 ```
 
+기존의 `import`와 비슷하게 `export`방식에 따라 모듈을 불러올 수 있다.
+
+```javascript
+export default () => { console.log('default') }
+export const fetchData= () => { console.log('fetchData') }
+const module = await import('fetch')
+module.default() // default
+module.fetchData() //fetchData
+```
+
+이를 통해, 네이티브로도 쉽게 코드 스플리팅이 가능해진다. 
+
 ### BigInt
 
-그간 자바스크립트는 큰 숫자를 다루는 데 많은 문제를 가지고 있었다. `Number.MAX_SAFE_INTEGER` 에 해당하는 2^53-1보다 큰 숫자는 처리할 수가 없었다. 이번 ES2020에 들어와 `BigInt` 객체가 도입되어 더 큰 숫자를 처리할 수 있게 되었다.
+그간 자바스크립트는 큰 숫자를 다루는 데 많은 문제를 가지고 있었다. `Number.MAX_SAFE_INTEGER` 에 해당하는 2^53-1보다 큰 숫자는 처리할 수가 없었다. 따라서, 아래와 같이 최대 숫자를 넘게 되면 더 이상 값이 증가하지 않는다. ES2020에서는 `BigInt` 객체가 도입되어 더 큰 숫자를 처리할 수 있게 되었다. 
 
 ```javascript
 let oldBigNumber = Number.MAX_SAFE_INTEGER // 9007199254740991
@@ -144,14 +162,13 @@ let oldBigNumber = Number.MAX_SAFE_INTEGER // 9007199254740991
 
 ![image-20200715173631850](https://user-images.githubusercontent.com/26768201/88042049-43b1bf80-cb86-11ea-82e3-71030c8e82f1.png)
 
-숫자 뒤에 `n` 을 붙이게 되면 BigInt로 인식한다. 
+`BigInt`를 쓰는 방법은 어렵지 않다. 숫자 뒤에 `n` 을 붙이게 되면 `BigInt`로 인식한다. 
 
 ```javascript
 let newBigNumber = 9007199254740991n
 ++newBigNumber // 9007199254740992n
 ++newBigNumber // 9007199254740993n
 ++newBigNumber // 9007199254740994n
-
 ```
 
 ![image-20200715173839075](https://user-images.githubusercontent.com/26768201/88042055-46141980-cb86-11ea-9c6e-fc15d27b9aed.png)
@@ -173,37 +190,153 @@ let newBigNumber = 9007199254740991n
 
 ### Promise.allSettled
 
+`Promise.allSettled`는 `Promise` 객체가 담긴 배열을 받아, 모든 `Promise` 의 결과를 얻을 때 까지 기다린다. `Promise.all` 과 비슷하지만, `Promise.all` 의 경우 하나라도 실패할 경우 해당 실패를 반환하지만, `Promise.allSettled` 는 실패와 관계 없이 모든 결과를 기다렸다가 반환한다.
+
+```javascript
+const promise1 = Promise.resolve(3);
+const promise2 = new Promise((resolve, reject) => setTimeout(reject, 100, 'foo'));
+const promises = [promise1, promise2];
+
+Promise.allSettled(promises)
+  .then((results) => 
+        results.forEach((result) => console.log(result)));
+
+// {status: "fulfilled", value: 3}
+// {status: "rejected", reason: "foo"}
+
+```
+
+성공한 경우에 `status`는 `'fulfilled'`이며, `.value`를 통해 값을 전달받을 수 있다. 반대로 실패한 경우에 `status`는 `'rejected'` 며, `.reason`을 통해 에러를 받을 수 있다.
+
+`Primise.allSettled`는 `Promise.all` , `Promise.any` 그리고 `Promise.race` 와의 차이를 간략히 살펴보자. 4가지 메서드 모두 배열 안에 있는 `Promise` 를 인자로 받고 `Promise` 객체를 반환한다.
+
+* `Promise.all` :
+
+  1. 전달된 `Promise` 모두 병렬로 실행하고, 완료될때 까지 기다린다. 
+
+  2. 배열 안에 담긴 프로미스의 결과값을 담은 배열이 새로 반환되는 `Promise`의 result가 된다. 이때, 순서는 완료된 순서가 아닌 처음에 인자로 들어온 순서다.
+
+  3. 하나라도 거부되면, 에러와 함께 그 결과를 반환한다.
+
+* `Promise.allSettled` : 
+
+  1. 전달된 `Promise` 모두 병렬로 실행하고, 완료될때 까지 기다린다.
+
+  2. 배열 안에 담긴 프로미스의 결과값을 담은 배열이 새로 반환되는 `Promise`의 result가 된다. 이때, 순서는 완료된 순서가 아닌 처음에 인자로 들어온 순서다.
+
+  3. 성공한 것과 실패한 것을 구분하여 `status`, `value`(실패의 경우 `reason`)를 결과에 담아 반환한다.
+
+* `Promise.race` : 
+
+  1. 전달된 `Promise` 모두 병렬로 실행하고, 가장 먼저 처리되는` Promise`의 결과(혹은 에러)를 반환한다.
+
+* `Promise.any` : 
+
+  1. 전달된 `Promise` 모두 병렬로 실행하고, 가장 먼저 성공하는 `Promise`의 결과를 반환한다.
+  2. 모두 실패한 경우에는 해당 실패 이유가 담긴 배열을 반환한다.
+
+![image-20200722174720603](https://user-images.githubusercontent.com/26768201/88157736-1b899580-cc46-11ea-883a-335da0255fb5.png)
+
 ### globalThis
+
+다양한 자바스크립트의 런타임 환경(Browser, Node, web-worker ... )에서 `global Object` 는 각 런타임 환경마다 다르다. 브라우저의 경우 `window`를 사용하고, Node는 `global` 그리고 웹 워커는 `self`를 사용한다. 이러한 상황에서 동일한 코드를 사용하기란 여간 어려운 일이 아니었는데, ES2020에서는 `globalThis` 를 지원하여 이를 통일하였다.
+
+```javascript
+globalThis.XMLHttpRequest === window.XMLHttpRequest // true
+```
+
 ### for-in mechanics
 
-ECMA 사양에서는 , 아래와 같이 `for-in` 에서의 순서를 딱히 명시하지 않았지만 ES2020에 들어와 아래의 순서가 공식적으로 표준화되었다.
+ECMA 사양에서는 `for-in` 의 순서를 딱히 명시하지 않았지만 ES2020에 들어와 순서가 공식적으로 표준화되었다.
 
 ```javascript
 for (x in y)
 ```
 
-
-
 ### Optional Chainings
 
-Optional Chaning은 Object 프로퍼티의 깊은 곳 까지 갈 수 있게 한다. 기존의 체이닝의 경우 만약 해당 프로퍼티가 존재하지 않다면 에러를 만들었지만, 옵셔널 체이닝의 등장으로 해당 프로퍼티의 존재 여부를 확인하는 코드를 따로 작성하지 않아도 된다. 만약 해당 프로퍼티가 Object내부에 존재한다면, 해당 값을 반환하고 아니라면 `undefined`를 반환한다.
+Optional Chaning은 `Object` 프로퍼티의 깊은 곳 까지 갈 수 있게 한다. 기존의 체이닝의 경우 만약 해당 프로퍼티가 존재하지 않다면 에러를 만들었지만, 옵셔널 체이닝의 등장으로 해당 프로퍼티의 존재 여부를 확인하는 코드를 따로 작성하지 않아도 된다. 만약 해당 프로퍼티가 Object내부에 존재한다면, 해당 값을 반환하고 아니라면 `undefined`를 반환한다.
 
 ```javascript
 const obj = {
   prop1: {
-    prop2: 100
+    prop2: 'Hello'
   }
 }
 
-obj.prop1?.prop2 // 100
-obj.prop1?.idontcare? // undefined
+obj.prop1?.prop2 // Hello
+obj.prop1?.idontcare // undefined
+obj.prop3.idontcare // Error
+obj.prop3?.idontcare // undefined
 ```
 
-### Nullish coal
+기존에 중첩된 객체의 프로퍼티에 접근할 때에는 아래와 같이 참조가 가능한지 확인하는 추가적인 작업이 필요하다.
 
+```javascript
+const props = obj.prop1 && obj.prop1.prop2;
+```
 
+Optional Chaining을 적용할 경우 이러한 추가적인 작업이 필요하지 않는다. 
 
+```javascript
+const props = obj.prop1?.prop2;
+```
 
+Optional Chaining은 또한, 프로퍼티 검사 뿐만 아니라 함수의 존재 여부에 따라 실행하는 코드 역시 작성할 수 있다. 아래의 두 코드는 동일한 코드다.
+
+```javascript
+if (onReject) {
+  onReject(error.toString())
+}
+```
+
+```javascript
+onReject?.(error.toString())
+```
+
+### Nullish Coalescing Operator
+
+Nullish Coalescing Operator(Null 병합 연산자)는 왼쪽 피연산자가 `null`이거나 `undefined`인 경우 오른쪽 피연산자를 반환하고 그렇지 않으면 왼쪽 피연산자를 반환한다.
+
+```javascript
+console.log(null ?? "hello") // hello
+console.log(undefined ?? "world") // world
+```
+
+일반적으로 자바스크립트에서 많은 값들이 `falsy` 다. 여기서 `falsy`는 JS의 조건문, 반복문과 같이 `boolean` 값이 필요한 곳에서, 형 변환을 통해 특정 값을 `boolean` 값으로 변환하는 값들을 통틀어 부르는 말이다. 대표적인 예가 `0`, `""`(빈 문자열), `false`, `null`, `undefined`, `NaN` 다. 
+
+![JS Equality](https://user-images.githubusercontent.com/26768201/88157738-1c222c00-cc46-11ea-886b-975b7ea72e49.jpg)
+
+아래는 일반적으로 변수에 기본 값을 할당할 때 주로 쓰는 패턴이다. 
+
+```javascript
+const data = getValue();
+const sumOfCount = data.sum || 128
+```
+
+`||`연산자의 경우 `data.sum` 의 값이 `falsy` 에 해당할 경우  `sumOfCount` 의 값은`128` 이다. 하지만 만약 `data.sum` 이 `0` 이고, 그 `0` 이 의도한 값이라 할지라도 `||` 연산자는 `0` 을 `false` 로 보기 때문에 `128` 을 값으로 가진다. 
+
+Null 병합 연산자를 사용한다면 이러한 문제를 해결할 수 있다. 아까의 동일한 코드에서 `||` 를 Null 병합 연산자(`??`)로 바꾸기만 하면 된다. 이 경우 `data.sum` 이 `0` 의 값을 가진다면 `sumOfCount` 의 값은 `0` 이 된다. 
+
+```javascript
+const data = getValue();
+const sumOfCount = data.sum ?? 128
+```
+
+`??` 는 `data.sum` 이 `null` 혹은 `undefined` 일 경우에만 오른쪽 값인 `128` 을 반환한다.
+
+Null 병합 연산자는 And나 OR 연산자와 결합하여 사용하는 것이 불가능하다. 아래와 같이 사용할 경우 에러가 발생한다.
+
+```javascript
+null || undefined ?? "Hello"; 
+true || undefined ?? "World";
+```
+
+## 글을 끝맺으며
+
+ES2020에는 다양한 기능들이 새로 추가되었다. Javascript를 평소에 쓸 때, 불확실하다고 생각하며 조건문을 통해 확인하는 작업을 추가하곤 했는데, 위의 기능들이 모두 지원된다면 유용할 것 같다. ES6 ~ ES2020 사이의 추가된 기능들에 대해 세부적으로 알고 있으면 좋을 듯하다.
+
+![image-20200722170701292](https://user-images.githubusercontent.com/26768201/88157721-17f60e80-cc46-11ea-92b1-66fb60899455.png)
 
 ## Reference
 
@@ -219,4 +352,6 @@ obj.prop1?.idontcare? // undefined
 * [위키백과 - Ecma 인터내셔널]([https://ko.wikipedia.org/wiki/Ecma_%EC%9D%B8%ED%84%B0%EB%82%B4%EC%85%94%EB%84%90](https://ko.wikipedia.org/wiki/Ecma_인터내셔널))
 
 * [Better match results with String.prototype.matchAll()](https://developers.google.com/web/updates/2019/02/string-matchall)
+
+* [Promise.race vs. Promise.any And Promise.all vs. Promise.allSettled](https://sung.codes/blog/2019/05/18/promise-race-vs-promise-any-and-promise-all-vs-promise-allsettled/)
 
