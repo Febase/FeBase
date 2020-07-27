@@ -77,7 +77,7 @@ testModule.incrementCounter();
 
 ## 호스트 객체(Host Objects)와 네이티브 객체(Native Objects)의 차이점은 무엇인가요?
 
-호스트 객체는 브라우저 환경에서 제공하는 window, XMLHttpRequest, HTMLElement 등의 DOM 노드 객체와 같이 호스트 환경에 정의된 객체를 말한다. 
+`호스트 객체`는 브라우저 환경에서 제공하는 window, XMLHttpRequest, HTMLElement 등의 DOM 노드 객체와 같이 호스트 환경에 정의된 객체를 말한다. 
 예를 들어 브라우저에서 동작하는 환경과 브라우저 외부에서 동작하는 환경의 자바스크립트(Node.js)는 다른 호스트 객체를 사용할 수 있다. 
 브라우저에서 동작하는 환경의 호스트 객체는 전역 객체인 window, BOM(Browser Object Model)과 DOM(Document Object Model) 및 XMLHttpRequest 객체 등을 제공한다.
 
@@ -89,7 +89,7 @@ DOM(Document Object Model) : 문서 객체 모델은 현재 웹 페이지의 모
 
 ![DOM](https://poiemaweb.com/img/DOM.png)
 
-네이티브 객체는 ECMAScript 명세에 정의된 객체를 말하며, 어플리케이션 전역의 공통 기능을 제공한다. 네이티브 객체는 어플리케이션 환경과 관계없이 언제나 사용할 수 있다. 
+`네이티브 객체`는 ECMAScript 명세에 정의된 객체를 말하며, 어플리케이션 전역의 공통 기능을 제공한다. 네이티브 객체는 어플리케이션 환경과 관계없이 언제나 사용할 수 있다. 
 Object, String, Number, Boolean, Function, Array, RegExp, Date, Math, Symbol 등과 같은 객체 생성에 관계가 있는 함수 객체와 메소드로 구분된다. 
 원시 타입 값(string, number, boolean)에서 표준 빌트인 객체의 메서드로 호출할 때 Wrapper 객체로 일시 변환이 되는데, 이러한 Wrapper 객체에는 String, Number, Boolean 객체가 포함이 된다.
 
@@ -100,13 +100,33 @@ Object, String, Number, Boolean, Function, Array, RegExp, Date, Math, Symbol 등
 ```javascript
 function Person() {}
 
-const person = Person();
+var person = Person();
 
-const _person = new Person();
+var _person = new Person();
 ```
+
+첫 번째 식은 함수 선언식(Function Declaration)이다. ES5까지는 이 방식으로 클래스를 생성하였다. (ES6부터는 class 키워드로 클래스를 정의한다.)
+이 식만 가지고 실행은 되지 않는다. 하지만 전역 범위 네임스페이스에 해당 함수가 등록이 된다. 
+
+두 번째 식은 함수 표현식(Function Expression)이다. 새로 정의된 person 변수는 Person 함수의 값을 참조한. 모든 함수 표현식은 return 값을 가진다.
+만약 함수에 이름이 없을 경우 익명 함수로 할당이 되며, {} 로 감싸지는 식이 된다.
+
+세 번째 식은 Person 클래스의 객체 인스턴스를 생성하며 동시에 해당 클래스의 생성자가 호출되는 식이다.
+자바스크립트에서는 함수 자체가 그 객체의 생성자 역할을 하기 때문에 특별히 생성자 메서드를 정의할 필요가 없다. 클래스 안에 선언된 모든 내역은 인스턴스화되는 그 시간에 실행된다.
+
+## 셀프 체크
+
+1. 모듈 패턴은 ______ 를 사용하여 클래스의 private 캡슐화를 수행할 수 있다.
+2. 브라우저 객체 모델(BOM)의 최상위 객체는 ______ 이고, 문서 객체 모델(DOM)의 최상위 객체는 ________ 이다.
+3. 원시 타입 값에서 표준 빌트인 객체의 메서드를 호출하면 __________ 로 일시 변환된다.
+4. var _person = new Person() 의 방식으로 객체 인스턴스를 생성하면 해당 클래스의 ______ 을 자동으로 호출한다.
 
 ## 참고자료
 https://webclub.tistory.com/5
 https://yubylab.tistory.com/entry/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-for-javascript-Module-Pattern
 https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript
 https://poiemaweb.com/js-built-in-object
+https://joshua1988.github.io/web-development/javascript/function-expressions-vs-declarations/
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript
+https://poiemaweb.com/es6-class
+https://medium.com/@rlynjb/js-interview-question-difference-between-function-person-var-person-person-and-var-ab6eb8c9ae88
