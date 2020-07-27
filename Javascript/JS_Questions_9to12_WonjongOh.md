@@ -38,11 +38,11 @@ myModule.saySomething();
 ```
 
 이와 같은 객체 리터럴 방식을 통해서 코드를 캡슐화 하고 구조화 할 수가 있다. 하지만 이와 같이 수많은 모듈을 전역 스코프에서 사용하게 될 경우 
-원치 않은 다른 값을 변경하거나 변수나 메서드명의 충돌이 일어날 가능성도 있다. 이러한 부작용을 막기 위해 나타난 개념이 모듈 패턴이다.
+원치 않은 다른 값을 변경하거나 변수나 메서드명의 충돌이 일어날 가능성도 있다. 이러한 부작용을 막기 위해 나타난 개념이 `모듈 패턴`이다.
 
 모듈 패턴은 객체지향 프로그래밍에서 클래스의 컨셉을 반영하여 객체 내에서 변수를 선언하고 메서드로 조작할 수 있게 만드는 자바스크립트 디자인 패턴 중 하나이다. 
 객체 내로 범위를 제한하기 때문에 private/public 캡슐화가 가능하고, 전역 범위에서 변수가 오염될 걱정을 하지 않아도 된다는 장점이 있다. 
-모듈 패턴을 사용한 대표적인 라이브러리가 jQuery이다. 모듈 패턴은 클로저를 사용하여 다음과 같이 private 캡슐화를 수행한다.
+모듈 패턴을 사용한 대표적인 라이브러리가 jQuery이다. 모듈 패턴은 `클로저`를 사용하여 다음과 같이 private 캡슐화를 수행한다.
 
 ```javascript
 var testModule = (function () {
@@ -77,7 +77,24 @@ testModule.incrementCounter();
 
 ## 호스트 객체(Host Objects)와 네이티브 객체(Native Objects)의 차이점은 무엇인가요?
 
+호스트 객체는 브라우저 환경에서 제공하는 window, XMLHttpRequest, HTMLElement 등의 DOM 노드 객체와 같이 호스트 환경에 정의된 객체를 말한다. 
+예를 들어 브라우저에서 동작하는 환경과 브라우저 외부에서 동작하는 환경의 자바스크립트(Node.js)는 다른 호스트 객체를 사용할 수 있다. 
+브라우저에서 동작하는 환경의 호스트 객체는 전역 객체인 window, BOM(Browser Object Model)과 DOM(Document Object Model) 및 XMLHttpRequest 객체 등을 제공한다.
 
+BOM(Browser Object Model) : 브라우저 객체 모델은 브라우저 탭 또는 브라우저 창의 모델을 생성한다. 최상위 객체는 `window` 객체로 현재 브라우저 창 또는 탭을 표현하는 객체이다.
+
+![BOM](https://poiemaweb.com/img/BOM.png)
+
+DOM(Document Object Model) : 문서 객체 모델은 현재 웹 페이지의 모델을 생성한다. 최상위 객체는 `document` 객체로 전체 문서를 포함한다.
+
+![DOM](https://poiemaweb.com/img/DOM.png)
+
+네이티브 객체는 ECMAScript 명세에 정의된 객체를 말하며, 어플리케이션 전역의 공통 기능을 제공한다. 네이티브 객체는 어플리케이션 환경과 관계없이 언제나 사용할 수 있다. 
+Object, String, Number, Boolean, Function, Array, RegExp, Date, Math, Symbol 등과 같은 객체 생성에 관계가 있는 함수 객체와 메소드로 구분된다. 
+원시 타입 값(string, number, boolean)에서 표준 빌트인 객체의 메서드로 호출할 때 Wrapper 객체로 일시 변환이 되는데, 이러한 Wrapper 객체에는 String, Number, Boolean 객체가 포함이 된다.
+
+네이티브 객체를 Global Objects 라고 부르기도 하는데, 이는 전역 객체(Global Object)와는 다른 의미이므로 혼동하지 말아야 한다. 
+전역 객체는 모든 객체의 최상위 객체를 의미하며 Client-side에서는 window, Server-side(Node.js)에서는 global을 가리킨다.
 
 ## 다음 코드의 차이점은 무엇인가요?
 ```javascript
@@ -88,9 +105,8 @@ const person = Person();
 const _person = new Person();
 ```
 
-
-
 ## 참고자료
 https://webclub.tistory.com/5
 https://yubylab.tistory.com/entry/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-for-javascript-Module-Pattern
 https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript
+https://poiemaweb.com/js-built-in-object
