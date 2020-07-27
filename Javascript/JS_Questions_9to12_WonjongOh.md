@@ -5,13 +5,19 @@ date: 2020-07-27 23:00:00
 author: dev-owen
 ---
 
+<br>
+
 # JavaScript Interview Questions 9-12
+
+<br>
 
 ## 학습 목표
 
 - 디자인 패턴 중 하나인 모듈 패턴(Module Pattern)에 대해 알아보고, 기존의 전통적 상속 방법과 비교해서 어떤 장단점이 있는지 알아본다.
 - 호스트 객체(Host Objects)와 네이티브 객체(Native Objects)의 차이점에 대해서 알아본다.
 - 함수 선언식(function statement)과 함수 표현식(function literal)의 차이점에 대해 알아본다.
+
+<br>
 
 ## 당신은 코드를 어떻게 구현하나요? (모듈 패턴, 전통적 상속)
 
@@ -75,6 +81,8 @@ testModule.incrementCounter();
 - private/public 멤버를 다른 방식으로 접근해야 한다.
 - private 멤버를 직접 접근할 수가 없기에, 테스트가 불가능하고 버그 수정하는 과정에서 조금 더 원인을 찾기가 어려울 수 있다.
 
+<br>
+
 ## 호스트 객체(Host Objects)와 네이티브 객체(Native Objects)의 차이점은 무엇인가요?
 
 `호스트 객체`는 브라우저 환경에서 제공하는 window, XMLHttpRequest, HTMLElement 등의 DOM 노드 객체와 같이 호스트 환경에 정의된 객체를 말한다. 
@@ -96,6 +104,8 @@ Object, String, Number, Boolean, Function, Array, RegExp, Date, Math, Symbol 등
 네이티브 객체를 Global Objects 라고 부르기도 하는데, 이는 전역 객체(Global Object)와는 다른 의미이므로 혼동하지 말아야 한다. 
 전역 객체는 모든 객체의 최상위 객체를 의미하며 Client-side에서는 window, Server-side(Node.js)에서는 global을 가리킨다.
 
+<br>
+
 ## 다음 코드의 차이점은 무엇인가요?
 ```javascript
 function Person() {}
@@ -114,6 +124,8 @@ var _person = new Person();
 세 번째 식은 Person 클래스의 객체 인스턴스를 생성하며 동시에 해당 클래스의 생성자가 호출되는 식이다.
 자바스크립트에서는 함수 자체가 그 객체의 생성자 역할을 하기 때문에 특별히 생성자 메서드를 정의할 필요가 없다. 클래스 안에 선언된 모든 내역은 인스턴스화되는 그 시간에 실행된다.
 
+<br>
+
 ## 셀프 체크
 
 1. 모듈 패턴은 ______ 를 사용하여 클래스의 private 캡슐화를 수행할 수 있다.
@@ -121,12 +133,15 @@ var _person = new Person();
 3. 원시 타입 값에서 표준 빌트인 객체의 메서드를 호출하면 __________ 로 일시 변환된다.
 4. var _person = new Person() 의 방식으로 객체 인스턴스를 생성하면 해당 클래스의 ______ 을 자동으로 호출한다.
 
+<br>
+
 ## 참고자료
-https://webclub.tistory.com/5
-https://yubylab.tistory.com/entry/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-for-javascript-Module-Pattern
-https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript
-https://poiemaweb.com/js-built-in-object
-https://joshua1988.github.io/web-development/javascript/function-expressions-vs-declarations/
-https://developer.mozilla.org/ko/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript
-https://poiemaweb.com/es6-class
-https://medium.com/@rlynjb/js-interview-question-difference-between-function-person-var-person-person-and-var-ab6eb8c9ae88
+
+- https://webclub.tistory.com/5
+- https://yubylab.tistory.com/entry/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-for-javascript-Module-Pattern
+- https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript
+- https://poiemaweb.com/js-built-in-object
+- https://joshua1988.github.io/web-development/javascript/function-expressions-vs-declarations/
+- https://developer.mozilla.org/ko/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript
+- https://poiemaweb.com/es6-class
+- https://medium.com/@rlynjb/js-interview-question-difference-between-function-person-var-person-person-and-var-ab6eb8c9ae88
