@@ -338,6 +338,12 @@ ES2020에는 다양한 기능들이 새로 추가되었다. Javascript를 평소
 
 ![image-20200722170701292](https://user-images.githubusercontent.com/26768201/88157721-17f60e80-cc46-11ea-92b1-66fb60899455.png)
 
+### 학습 질문
+
+1. Promise.all, allSettled, any, race의 차이점
+2. BigInt는 일반적인 숫자 타입과 연산이 가능하다 O, X
+3. String.match는 결과에 _를 포함하지 않고 String.matchAll은 _를 포함한다.
+
 ## Reference
 
 - [10 New JavaScript Features in ES2020 That You Should Know](https://www.freecodecamp.org/news/javascript-new-features-es2020/)
