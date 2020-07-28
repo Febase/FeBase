@@ -1,8 +1,8 @@
 ---
 title: FE Interview - prototype위주로 조져보자
-date: 2020-07-15 00:00:00
-author: snowjang24
-category: Javascript
+date: 2020-07-28 00:00:00
+author: samslow
+category: Interview
 ---
 
 - Javascript 상속과 Prototype에 관한 FE Interview 질문을 알아봅니다.
