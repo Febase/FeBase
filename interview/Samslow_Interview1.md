@@ -1,7 +1,7 @@
 ---
 title: FE Interview - prototype위주로 조져보자
-date: 2020-07-15 00:00:00
-author: snowjang24
+date: 2020-07-28 00:00:00
+author: samslow
 category: Javascript
 ---
 
