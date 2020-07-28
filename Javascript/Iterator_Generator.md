@@ -1,3 +1,12 @@
+---
+title: Iterator & Generator
+date: 2020-06-26 00:00:00
+author: nailerHeum
+category: Javascript
+---
+
+
+
 # Iterator & Generator
 
 ---
@@ -23,7 +32,7 @@ iterator는 책갈피와 비슷한 개념이다. 배열은 iterable의 좋은 �
 `next`를 호출하면 `value` 프로퍼티와 `done` 프로터피를 가진 객체를 반환한다.
 
 ```jsx
-​> const arr = [1, 2, 3];
+> const arr = [1, 2, 3];
 > const it = arr.values();
 > it.next();
 { value: 1, done: false }

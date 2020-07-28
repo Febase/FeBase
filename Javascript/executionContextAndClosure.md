@@ -1,3 +1,12 @@
+---
+title: 실행 컨텍스트와 클로저 (Execution Context & Closure)
+date: 2020-06-19 00:00:00
+author: nailerHeum
+category: Javascript
+---
+
+
+
 Author: [@nailerHeum](https://github.com/nailerHeum)
 
 # 실행 컨텍스트와 클로저에 대해서
