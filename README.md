@@ -12,6 +12,7 @@
 
 게시물 | 날짜 | 글쓴이
 ---|---|---
+[디바운스, 쓰로틀링](https://github.com/Febase/FeBase/blob/master/Javascript/Throttling_Debouncing.md)| 2020-07-22 | [@jinsunee](https://github.com/jinsunee)
 [Front to the ES2020](https://github.com/Febase/FeBase/blob/master/Javascript/ES2020.md)| 2020-07-15 | [@snowjang24](https://github.com/snowjang24)
 [Javascript 기초 - 버블 버블 버블 팝! 이벤트 버블링!](https://github.com/Febase/FeBase/blob/master/Javascript/EventBubling.md)| 2020-07-14 | [@samslow](https://github.com/samslow)
 [0.1 + 0.2 !== 0.3 인 이유 (ieee 754)](https://github.com/Febase/FeBase/blob/master/Javascript/Number_Floating_Point.md)| 2020-07-08 | [@jinsunee](https://github.com/jinsunee)
