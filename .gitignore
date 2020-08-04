@@ -4,5 +4,4 @@
 *.gif
 __pycache__/*
 lib/__pycache__/*
-
 /.idea
