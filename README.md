@@ -12,6 +12,7 @@
 
 게시물 | 날짜 | 글쓴이
 ---|---|---
+[[FE Interview]](https://github.com/Febase/FeBase/blob/master/interview/jinsunee_interview1.md)| 2020-08-05 | [@jinsunee](https://github.com/jinsunee)
 [[FE Interview]](https://github.com/Febase/FeBase/blob/master/interview/Snowjang24_Interview1.md)| 2020-08-05 | [@snowjang24](https://github.com/snowjang24)
 [FE Interview - AJAX & Template](https://github.com/Febase/FeBase/blob/master/interview/Nailer_interview1.md)| 2020-07-28 | [@nailerHeum](https://github.com/nailerHeum)
 [FE Interview - prototype위주로 조져보자](https://github.com/Febase/FeBase/blob/master/interview/Samslow_Interview1.md)| 2020-07-28 | [@samslow](https://github.com/samslow)
