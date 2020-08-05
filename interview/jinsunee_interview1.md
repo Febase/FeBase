@@ -1,5 +1,5 @@
 ---
-title: FE Interview - prototype위주로 조져보자
+title: [FE Interview]
 date: 2020-08-05 00:00:00
 author: jinsunee
 category: Interview
@@ -25,8 +25,8 @@ category: Interview
 var hello = function () {}
 
 (function() {
-  
- })
+
+})
 
 ## null과 undefined 그리고 undeclared의 차이점은 무엇인가요?
 
