@@ -22,7 +22,8 @@
 
 게시물 | 날짜 | 글쓴이
 ---|---|---
-[JavaScript Interview Questions 9-12](https://github.com/Febase/FeBase/blob/master/Javascript/JS_Questions_9to12_WonjongOh.md)| 2020-07-27 | [@dev-owen](https://github.com/dev-owen)
+[JavaScript Interview Questions 13-16 Aug 5th](https://github.com/Febase/FeBase/blob/master/interview/devowen_interview2.md)| 2020-08-05 | [@dev-owen](https://github.com/dev-owen)
+[JavaScript Interview Questions 9-12](https://github.com/Febase/FeBase/blob/master/interview/devowen_interview1.md)| 2020-07-27 | [@dev-owen](https://github.com/dev-owen)
 [디바운스, 쓰로틀링](https://github.com/Febase/FeBase/blob/master/Javascript/Throttling_Debouncing.md)| 2020-07-22 | [@jinsunee](https://github.com/jinsunee)
 [Front to the ES2020](https://github.com/Febase/FeBase/blob/master/Javascript/ES2020.md)| 2020-07-15 | [@snowjang24](https://github.com/snowjang24)
 [Javascript 기초 - 버블 버블 버블 팝! 이벤트 버블링!](https://github.com/Febase/FeBase/blob/master/Javascript/EventBubling.md)| 2020-07-14 | [@samslow](https://github.com/samslow)
