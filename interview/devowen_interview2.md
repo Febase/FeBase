@@ -1,6 +1,6 @@
 ---
 title: JavaScript Interview Questions 13-16 Aug 5th
-category: JavaScript
+category: interview
 date: 2020-08-05 01:00:00
 author: dev-owen
 ---
