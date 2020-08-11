@@ -1,6 +1,6 @@
 ---
-title: JavaScript Interview Questions 9-12
-category: interview
+title: FE Interview 1
+category: Interview
 date: 2020-07-27 23:00:00
 author: dev-owen
 ---

@@ -1,6 +1,6 @@
 ---
-title: JavaScript Interview Questions 13-16 Aug 5th
-category: interview
+title: FE Interview 7
+category: Interview
 date: 2020-08-05 01:00:00
 author: dev-owen
 ---

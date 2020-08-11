@@ -1,6 +1,6 @@
 ---
-title: JavaScript Interview Questions 3rd Aug 12th
-category: interview
+title: FE Interview 8
+category: Interview
 date: 2020-08-12 01:00:00
 author: dev-owen
 ---
@@ -215,7 +215,9 @@ getData().then(function(tableData) {
 ## 셀프 체크
 
 1. MPA == SSR 이고 SPA == CSR 이다. (O/X)
-2. 어떤 함수가 Promise 객체를 통해 비동기 처리를 할 때, 성공시 _____ 을 호출하며, 실패시 _______ 를 호출한다.
+2. 처음에는 좀 느리지만 나중에는 더 빨라지는 방법은 (SSR/CSR) 이다.
+3. 어떤 함수가 Promise 객체를 통해 비동기 처리를 할 때, 성공시 _____ 을 호출하며, 실패시 _______ 를 호출한다.
+4. _____________ 을 사용하여 병렬적으로 Promise 비동기 처리를 할 수도 있다.
 
 <br>
 
