@@ -1,5 +1,5 @@
 ---
-title: FE Interview 5
+title: FE Interview 6
 date: 2020-08-05 00:00:00
 author: jinsunee
 category: Interview

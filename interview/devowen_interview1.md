@@ -1,5 +1,5 @@
 ---
-title: JavaScript Interview Questions 9-12
+title: FE Interview 1
 category: Interview
 date: 2020-07-27 23:00:00
 author: dev-owen
@@ -131,7 +131,7 @@ var _person = new Person();
 
 1. 모듈 패턴은 **\_\_** 를 사용하여 클래스의 private 캡슐화를 수행할 수 있다.
 2. 브라우저 객체 모델(BOM)의 최상위 객체는 **\_\_** 이고, 문서 객체 모델(DOM)의 최상위 객체는 **\_\_\_\_** 이다.
-3. 원시 타입 값에서 표준 빌트인 객체의 메서드를 호출하면 ****\_\_**** 로 일시 변환된다.
+3. 원시 타입 값에서 표준 빌트인 객체의 메서드를 호출하면 \***\*\_\_\*\*** 로 일시 변환된다.
 4. var \_person = new Person() 의 방식으로 객체 인스턴스를 생성하면 해당 클래스의 **\_\_** 을 자동으로 호출한다.
 
 <br>

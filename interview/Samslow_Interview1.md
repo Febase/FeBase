@@ -1,5 +1,5 @@
 ---
-title: FE Interview 1
+title: FE Interview 2
 date: 2020-07-28 00:00:00
 author: samslow
 category: Interview
