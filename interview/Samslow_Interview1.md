@@ -1,5 +1,5 @@
 ---
-title: FE Interview - prototype위주로 조져보자
+title: FE Interview 1
 date: 2020-07-28 00:00:00
 author: samslow
 category: Interview
