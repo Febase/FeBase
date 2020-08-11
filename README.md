@@ -12,18 +12,18 @@
 
 게시물 | 날짜 | 글쓴이
 ---|---|---
-[[FE Interview]](https://github.com/Febase/FeBase/blob/master/interview/jinsunee_interview1.md)| 2020-08-05 | [@jinsunee](https://github.com/jinsunee)
-[FE Interview - Samslow 2](https://github.com/Febase/FeBase/blob/master/interview/Samslow_Interview2.md)| 2020-08-05 | [@samslow](https://github.com/samslow)
-[[FE Interview]](https://github.com/Febase/FeBase/blob/master/interview/Snowjang24_Interview1.md)| 2020-08-05 | [@snowjang24](https://github.com/snowjang24)
-[FE Interview - AJAX & Template](https://github.com/Febase/FeBase/blob/master/interview/Nailer_interview1.md)| 2020-07-28 | [@nailerHeum](https://github.com/nailerHeum)
-[FE Interview - prototype위주로 조져보자](https://github.com/Febase/FeBase/blob/master/interview/Samslow_Interview1.md)| 2020-07-28 | [@samslow](https://github.com/samslow)
+[FE Interview 7](https://github.com/Febase/FeBase/blob/master/interview/devowen_interview2.md)| 2020-08-05 | [@dev-owen](https://github.com/dev-owen)
+[FE Interview 6](https://github.com/Febase/FeBase/blob/master/interview/jinsunee_interview1.md)| 2020-08-05 | [@jinsunee](https://github.com/jinsunee)
+[FE Interview 5](https://github.com/Febase/FeBase/blob/master/interview/Samslow_Interview2.md)| 2020-08-05 | [@samslow](https://github.com/samslow)
+[FE Interview 4](https://github.com/Febase/FeBase/blob/master/interview/Snowjang24_Interview1.md)| 2020-08-05 | [@snowjang24](https://github.com/snowjang24)
+[FE Interview 3](https://github.com/Febase/FeBase/blob/master/interview/Nailer_interview1.md)| 2020-07-28 | [@nailerHeum](https://github.com/nailerHeum)
+[FE Interview 2](https://github.com/Febase/FeBase/blob/master/interview/Samslow_Interview1.md)| 2020-07-28 | [@samslow](https://github.com/samslow)
+[FE Interview 1](https://github.com/Febase/FeBase/blob/master/interview/devowen_interview1.md)| 2020-07-27 | [@dev-owen](https://github.com/dev-owen)
 
 ### JAVASCRIPT
 
 게시물 | 날짜 | 글쓴이
 ---|---|---
-[JavaScript Interview Questions 13-16 Aug 5th](https://github.com/Febase/FeBase/blob/master/interview/devowen_interview2.md)| 2020-08-05 | [@dev-owen](https://github.com/dev-owen)
-[JavaScript Interview Questions 9-12](https://github.com/Febase/FeBase/blob/master/interview/devowen_interview1.md)| 2020-07-27 | [@dev-owen](https://github.com/dev-owen)
 [디바운스, 쓰로틀링](https://github.com/Febase/FeBase/blob/master/Javascript/Throttling_Debouncing.md)| 2020-07-22 | [@jinsunee](https://github.com/jinsunee)
 [Front to the ES2020](https://github.com/Febase/FeBase/blob/master/Javascript/ES2020.md)| 2020-07-15 | [@snowjang24](https://github.com/snowjang24)
 [Javascript 기초 - 버블 버블 버블 팝! 이벤트 버블링!](https://github.com/Febase/FeBase/blob/master/Javascript/EventBubling.md)| 2020-07-14 | [@samslow](https://github.com/samslow)
