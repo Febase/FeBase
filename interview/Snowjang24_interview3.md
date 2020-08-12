@@ -9,7 +9,6 @@ category: interview
 
 1. 전역 scope를 사용했을 때 장단점에 관해 설명해주세요.
 2. 때때로 load event를 사용하는 이유에 관해 설명해주세요. 또 단점이 있다면 대안에 대해서도 설명해주세요.
-3. 이벤트 위임(Event Delegation)에서 하위 엘리먼트를 구분하는 방법에 대해 설명해주세요.
 
 ## 전역 scope를 사용했을 때 장단점에 관해 설명해주세요.
 
@@ -78,12 +77,11 @@ DOM에 대한 접근만을 필요로 하는 경우, `DOMContentLoaded`는 `load`
 
 각각의 특징을 잘 파악하고 적절하게 잘 사용하는 것이 중요하다.
 
-## 이벤트 위임(Event Delegation)에서 하위 엘리먼트를 구분하는 방법에 대해 설명해주세요.
-
-
 ## Self Check
 
-- 
+- `load` 이벤트는 `document`에서만 발생한다. (O / X)
+- 전역 스코프를 사용했을 때 장점 두 가지
+- `DOMContentLoaded`는 콘텐츠가 로드되는 것을 모두 기다린 이후 이벤트가 발생한다. (O / X)
 
 ## Reference
 
