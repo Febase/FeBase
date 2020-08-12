@@ -12,11 +12,11 @@
 
 게시물 | 날짜 | 글쓴이
 ---|---|---
+[FE Interview 8](https://github.com/Febase/FeBase/blob/master/interview/Nailer_interview2.md)| 2020-08-05 | [@nailerHeum](https://github.com/nailerHeum)
 [FE Interview 7](https://github.com/Febase/FeBase/blob/master/interview/devowen_interview2.md)| 2020-08-05 | [@dev-owen](https://github.com/dev-owen)
 [FE Interview 6](https://github.com/Febase/FeBase/blob/master/interview/jinsunee_interview1.md)| 2020-08-05 | [@jinsunee](https://github.com/jinsunee)
 [FE Interview 5](https://github.com/Febase/FeBase/blob/master/interview/Samslow_Interview2.md)| 2020-08-05 | [@samslow](https://github.com/samslow)
 [FE Interview 4](https://github.com/Febase/FeBase/blob/master/interview/Snowjang24_Interview1.md)| 2020-08-05 | [@snowjang24](https://github.com/snowjang24)
-[FE Interview 8](https://github.com/Febase/FeBase/blob/master/interview/Nailer_interview2.md)| 2020-08-05 | [@nailerHeum](https://github.com/nailerHeum)
 [FE Interview 3](https://github.com/Febase/FeBase/blob/master/interview/Nailer_interview1.md)| 2020-07-28 | [@nailerHeum](https://github.com/nailerHeum)
 [FE Interview 2](https://github.com/Febase/FeBase/blob/master/interview/Samslow_Interview1.md)| 2020-07-28 | [@samslow](https://github.com/samslow)
 [FE Interview 1](https://github.com/Febase/FeBase/blob/master/interview/devowen_interview1.md)| 2020-07-27 | [@dev-owen](https://github.com/dev-owen)
