@@ -1,3 +1,10 @@
+---
+title: FE Interview 10
+date: 2020-08-05 19:00:00
+author: nailerHeum
+category: Interview
+---
+
 # FeBase interview3
 
 ---
