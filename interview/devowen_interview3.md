@@ -1,5 +1,5 @@
 ---
-title: FE Interview 8
+title: FE Interview 9
 category: Interview
 date: 2020-08-12 01:00:00
 author: dev-owen
