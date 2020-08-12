@@ -1,5 +1,5 @@
 ---
-title: "Javascript 기초 - JavaScript 개발한다면 JIT은 알아야JIT"
+title: Javascript 기초 - JavaScript 개발한다면 JIT은 알아야JIT
 category: Javascript
 date: 2020-06-25 00:00:00
 author: samslow
