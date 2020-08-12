@@ -1,5 +1,5 @@
 ---
-title: FE Interview - Snowjang24
+title: FE Interview 4
 date: 2020-08-05 00:00:00
 author: snowjang24
 category: interview
@@ -192,17 +192,17 @@ let animal = {
   eats: true,
   walk() {
     alert("동물이 걷습니다.");
-  }
+  },
 };
 
 let rabbit = {
   jumps: true,
-  __proto__: animal
+  __proto__: animal,
 };
 
 let longEar = {
   earLength: 10,
-  __proto__: rabbit
+  __proto__: rabbit,
 };
 
 // 메서드 walk는 프로토타입 체인을 통해 상속받았습니다.
@@ -261,7 +261,7 @@ function foo(){
 
 호이스팅(Hoisting)은 코드에 선언된 변수 및 함수를 코드 상단으로 끌어올리는 것을 뜻한다. 여기서 함수 내에서 선언한 경우 해당 함수의 최상단으로, 전역인 경우에는 전역 범위의 최 상단으로 끌어 올려진다. 선언은 자바스크립트 엔진 구동시 가장 먼저 이뤄지고, 할당의 경우 런타임 과정에서 일어나기 때문에 선언만 호이스팅 된다.
 
-아래와 같은 같은 코드가 에러를 발생시키지 않는 이유는 호이스팅 때문이다. 
+아래와 같은 같은 코드가 에러를 발생시키지 않는 이유는 호이스팅 때문이다.
 
 ```jsx
 console.log(score); //undefined
@@ -276,21 +276,21 @@ score = 100;
 console.log(score); //100
 ```
 
-변수 호이스팅과 함수 호이스팅의 경우 전체적으로 동일하게 이뤄지지만, 함수 호이스팅에서 하나 주의해야할 점이 있다. 함수 호이스팅의 경우 함수 리터럴 방식으로 선언한 경우 호이스팅되지 않는다. 
+변수 호이스팅과 함수 호이스팅의 경우 전체적으로 동일하게 이뤄지지만, 함수 호이스팅에서 하나 주의해야할 점이 있다. 함수 호이스팅의 경우 함수 리터럴 방식으로 선언한 경우 호이스팅되지 않는다.
 
 ```jsx
 foo();
-var foo = function() {
-	console.log('hello');
-}
+var foo = function () {
+  console.log("hello");
+};
 ```
 
 또한, 호이스팅은 `var` 선언 뿐만 아니라 `const`와 `let`에서도 이뤄진다. 하지만 `var`과는 달리 `let`과 `const`는 TDZ(Temporal Dead Zone)에 의해 호이스팅이 이루어지지 않는 것처럼 보인다. `var`의 경우 선언과 동시에 초기화가 이루어지지만, `let`과 `const`의 경우 선언만 될 뿐 초기화가 이루어지지 않는다. 따라서, 메모리에 공간이 할당되어 있지 않게 되어 참조가 불가능하게 된다.
 
 ## Self Check
 
-- 자바스크립트의 실행 중인 모든 함수는 ___객체)에 대한 참조를 갖는다. `this`는 이러한 참조 값을 담고 있는 변수다.
-- 자바스크립트의 객체는 ___이라는 숨김 프로퍼티를 갖는다.
+- 자바스크립트의 실행 중인 모든 함수는 \_\_\_객체)에 대한 참조를 갖는다. `this`는 이러한 참조 값을 담고 있는 변수다.
+- 자바스크립트의 객체는 \_\_\_이라는 숨김 프로퍼티를 갖는다.
 - 자바스크립트에서 선언만 호이스팅 된다. (O, X)
 
 ## Reference
@@ -301,3 +301,4 @@ var foo = function() {
 - [https://d2.naver.com/helloworld/12864](https://d2.naver.com/helloworld/12864)
 - [https://evan-moon.github.io/2019/06/18/javascript-let-const/](https://evan-moon.github.io/2019/06/18/javascript-let-const/)
 - [https://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs](https://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs)
+
