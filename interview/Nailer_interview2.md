@@ -1,5 +1,5 @@
 ---
-title: FE Interview2 - event bubbling & capturing etc
+title: FE Interview 8
 date: 2020-08-05 00:00:00
 author: nailerHeum
 category: Interview
