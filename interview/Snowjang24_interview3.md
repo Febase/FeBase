@@ -1,5 +1,5 @@
 ---
-title: FE Interview
+title: FE Interview 10
 date: 2020-08-12 00:00:00
 author: snowjang24
 category: interview
@@ -32,17 +32,17 @@ category: interview
 
 ### `load` 이벤트를 사용하는 이유
 
-`load` 이벤트가 발생되는 시점은 객체가 모두 로드 되었을 때 발생한다. 보통 웹 페이지의 모든 콘텐츠(이미지, 스크립트 파일, CSS 파일 등)가 로드된 이후 스크립트를 실행하기 위해, `document` 혹은 `<body>`에 Event Listener를 추가한다. 
+`load` 이벤트가 발생되는 시점은 객체가 모두 로드 되었을 때 발생한다. 보통 웹 페이지의 모든 콘텐츠(이미지, 스크립트 파일, CSS 파일 등)가 로드된 이후 스크립트를 실행하기 위해, `document` 혹은 `<body>`에 Event Listener를 추가한다.
 
 ```javascript
-EventTarget.addEventListener('load', EventHandler);
+EventTarget.addEventListener("load", EventHandler);
 ```
 
 `document`, `<body>` 외에도 `load` 이벤트는 아래의 태그들에서 사용이 가능하다.
 
 ```html
-<body> <frame> <iframe> 
-<img> <input type="image"> <link> 
+<body> <frame> <iframe>
+<img> <input type="image"> <link>
 <script> <style>
 ```
 
@@ -54,24 +54,25 @@ EventTarget.addEventListener('load', EventHandler);
 
 ```html
 <body onload="checkCookies()">
-<script>
-function checkCookies() {
-    var text = "";
-    if (navigator.cookieEnabled == true) {
+  <script>
+    function checkCookies() {
+      var text = "";
+      if (navigator.cookieEnabled == true) {
         text = "Cookies are enabled.";
-    } else {
+      } else {
         text = "Cookies are not enabled.";
+      }
+      document.getElementById("demo").innerHTML = text;
     }
-    document.getElementById("demo").innerHTML = text;
-}
-</script>
+  </script>
+</body>
 ```
 
 ### `load` 이벤트 사용의 단점과 그 대안
 
-`load` 이벤트는 문서내의 모든 콘텐츠(이미지, 스크립트 파일, CSS 파일 등)의 로드가 끝난 후에 실행된다. 네트워크의 상황 혹은 로드해야하는 콘텐츠의 크기에 따라, 에플리케이션의 구동이 지연될 가능성이 생길 수 있다. 
+`load` 이벤트는 문서내의 모든 콘텐츠(이미지, 스크립트 파일, CSS 파일 등)의 로드가 끝난 후에 실행된다. 네트워크의 상황 혹은 로드해야하는 콘텐츠의 크기에 따라, 에플리케이션의 구동이 지연될 가능성이 생길 수 있다.
 
-이에 대한 대안으로 `DOMContentLoaded` 이벤트를 사용할 수 있다. `DOMContentLoaded`는 `load` 이벤트와는 달리, 모든 콘텐츠가 로드되기를 기다리지 않는다. 브라우저가 HTML을 읽고 DOM 트리를 완성하는 즉시 해당 이벤트가 발생한다. 따라서, `load` 에서 발생할 수 있는 지연 문제가 발생하지 않는다. 
+이에 대한 대안으로 `DOMContentLoaded` 이벤트를 사용할 수 있다. `DOMContentLoaded`는 `load` 이벤트와는 달리, 모든 콘텐츠가 로드되기를 기다리지 않는다. 브라우저가 HTML을 읽고 DOM 트리를 완성하는 즉시 해당 이벤트가 발생한다. 따라서, `load` 에서 발생할 수 있는 지연 문제가 발생하지 않는다.
 
 DOM에 대한 접근만을 필요로 하는 경우, `DOMContentLoaded`는 `load`의 대안이기도 하지만 콘텐츠가 로드된 이후 어떠한 스크립트를 동작시켜야하는 상황에서는 `load` 이벤트를 사용하는 것이 옳다(이미지의 크기와 관련된 스크립트 처리 등의 경우).
 
