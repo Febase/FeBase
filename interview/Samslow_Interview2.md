@@ -107,16 +107,16 @@ const duplicate(arr) => {
 
 2. ```js
    <script>
-     document.addEventListener('DOMContentLoaded', () => log('DOMContentLoaded'));
+     document.addEventListener('DOMContentLoaded', () => log('DOMContentLoaded')); ···  1
 
-     window.onload = () => log('window onload');
+     window.onload = () => log('window onload'); ···  2
    </script>
 
-   <iframe src="iframe.html" onload="log('iframe onload')"></iframe>
+   <iframe src="iframe.html" onload="log('iframe onload')"></iframe> ··· 3
 
    <img src="http://en.js.cx/clipart/train.gif" id="img" />
    <script>
-     img.onload = () => log('img onload');
+     img.onload = () => log('img onload'); ··· 4
    </script>
    ```
 
