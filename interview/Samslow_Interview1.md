@@ -54,7 +54,7 @@ person2.study.apply(person1, ["?", "~"]); // Jo이/가 공부를 하고 있습�
 
 그럼 유사배열이란 무엇일까?
 
-![유사배열](https://www.dropbox.com/s/lzw34u94ltvx3yj/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202020-07-28%2004.44.47.png?dl=1)
+![유사배열](https://www.dropbox.com/s/lzw34u94ltvx3yj/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202020-07-28%2004.44.47.png?raw=1)
 
 크롬 개발 도구로 찍으면 나오는 위 사진처럼, 배열은 배열인데 Array.prototype을 상속받는 배열은 아닌 배열을 유사배열이라고 한다.
 

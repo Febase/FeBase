@@ -46,7 +46,7 @@ JS 의 이벤트 전파방식은 크게 2가지가 있다.
 
 # 등잔밑이 씨꺼매서 아무것도 안보여
 
-![영화 신세계 황정민 선글라스로 유명한 크롬하츠선글라스 GRAND BEAST ...](https://lh3.googleusercontent.com/proxy/ZfBde2jEhv-vP1g5vSCXVMJXlDh4E0Ub52I2NALuk9WG6bNPG8hosjhoVKA0N9xiSogd7AgTpMD0BodfWIPpIpA_pGAQRkC41yhF-n7jiKcedI1TH6SU12f9nL0JSCOtw97vYDChaIYuQgY2FZCfclVYpm1_Jmry1RN_2RUG1AMrCJ0FL7wxVKZRojQP4NXuxKCHa4_g_V8vgwazVI6Jd9a9Z2CcBid_HGjneuFHB97E97l_LRVp9rSzTFOU1vJXiJmcDvNWU0RA8_Ql6komvAZ2zmEAmprpL3SmBCUM7fO8f2r7SBqELxy09WWtdGMoCapR5SiC8QTJyOywAQ)
+![영화 신세계 황정민 선글라스](https://mblogthumb-phinf.pstatic.net/20160225_197/zzingko2273_1456380245455vLKy3_JPEG/%BF%B5%C8%AD%BD%C5%BC%BC%B0%E8%C8%B2%C1%A4%B9%CE%BC%B1%B1%DB%B6%F3%BD%BA%C5%A9%B7%D2%C7%CF%C3%F7%BC%B1%B1%DB%B6%F3%BD%BAGRANDBEAST.jpg?type=w2)
 
 <div align="center" style="color: gray">이 짤만 보면 황정민 배우님이 "씨꺼매서 아무것도 안보여~"라고 하는게 들린다.</div>
 
