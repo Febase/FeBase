@@ -57,7 +57,7 @@ JS에서 JS Magic을 쉽게 경험 할 수 있는 비교연산자이다.
 
 프로토콜, 호스트, 포트는 크롬 개발자 도구에서 `location`을 찍어보면 알 수 있다.
 
-![location](https://www.dropbox.com/s/6t272nxvf1bh23v/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202020-08-05%2004.24.41.png?dl=1)
+![location](https://www.dropbox.com/s/6t272nxvf1bh23v/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202020-08-05%2004.24.41.png?raw=1)
 
 다시 말해 동일 출처 정책이란 같은 **Origin 출처의 서버로만 요청을 주고 받을 수 있다는 것이다.**
 
