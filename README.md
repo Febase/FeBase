@@ -2,6 +2,8 @@
 
 프론트 엔드 개발 지식을 위한 기본을 배우는 시간! :white_check_mark:
 
+[Season 1 Exam](https://forms.gle/wjCcgk9uZarkF1rJ8)
+
 <!-- 이 항목은 절대 건드리지 말 것(자동화) -->
 
 ## :file_folder: Table Of Contents
