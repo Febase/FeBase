@@ -1,3 +1,7 @@
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/26738367/91129006-34251980-e6e4-11ea-8639-171179df1e04.png" />
+</div>
+
 # FeBase - Frontend Base
 
 프론트 엔드 개발 지식을 위한 기본을 배우는 시간! :white_check_mark:
