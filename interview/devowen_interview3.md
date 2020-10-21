@@ -130,7 +130,7 @@ $.get("url", function (response) {
 따라서 이러한 문제를 해결하기 위해 ES6에서 등장한 개념이 프로미스(Promise)이다. 프로미스는 자바스크립트 비동기 처리에 사용되는 객체로 다음과 같은 세 가지 상태를 가진다.
 
 - Pending(대기) : 비동기 처리 로직이 아직 완료되지 않은 상태
-  - `new Promise()` 객체를 생하면 대기 상태가 된다.
+  - `new Promise()` 객체를 생성하면 대기 상태가 된다.
 - Fulfilled(이행) : 비동기 처리가 완료되어 프로미스가 결과 값을 반환해준 상태
   - 첫 번째 파라미터 `resolve`를 실행하면 이 상태가 되며, 이후 `then()`을 통해 처리 결과를 받는다.
 - Rejected(실패) : 비동기 처리가 실패하거나 오류가 발생한 상태
@@ -180,7 +180,18 @@ getData().then(function (tableData) {
   3. `promise.all()`을 사용하여 병렬적으로 비동기 처리를 할 수도 있다.
   4. `resolve()`, `reject()`를 통해 성공, 실패 상황에 따른 분기처리를 하기가 수월하다.
 - 단점(엄밀히 말하면 단점은 아니지만) 1. Promise도 코드가 복잡하고 분기처리가 힘들다고 하는 사람들이 존재한다. 2. 에러 핸들링을 하기가 어렵다. 아래 예제에서 catch 문은 에러를 잡지 못한다. 주석처리한 `.catch()`로 잡아야 한다.
-  `javascript const makeRequest = () => { try { getJSON() .then(result => { // this parse may fail const data = JSON.parse(result) console.log(data) }) // uncomment this block to handle asynchronous errors // .catch((err) => { // console.log(err) // }) } catch (err) { console.log(err) } }`
+  ```javascript 
+  const makeRequest = () => { 
+    try { 
+      getJSON() .then(result => { 
+        // this parse may fail 
+        const data = JSON.parse(result) console.log(data) 
+      }) // uncomment this block to handle asynchronous errors // .catch((err) => { // console.log(err) // })
+    } catch (err) { 
+      console.log(err) 
+    } 
+  }
+  ```
   3. 디버깅을 하기가 어렵다. 아래 예제에서 `.then` 블록 안에 중단점을 잡을 수 없다. 디버그 도구는 동기화된 코드를 따라 움직이기 때문.
   ````javascript
     const makeRequest = () => {
