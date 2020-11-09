@@ -118,8 +118,8 @@ use strict는 전체 스크립트 혹은 부분적인 함수를 엄격 모드로
 
 ```javascript
 const isFizzBuzz = (num) => {
-  const threeMultiple = num % 3 === 0 ? true : false;
-  const fiveMultiple = num % 5 === 0 ? true : false;
+  const threeMultiple = num % 3 === 0;
+  const fiveMultiple = num % 5 === 0;
   if (threeMultiple) return fiveMultiple ? "fizzbuzz" : "fizz";
   else if (fiveMultiple) return "buzz";
 };
