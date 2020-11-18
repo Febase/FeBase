@@ -11,7 +11,7 @@ category: S2_Round2
 
 ## RxJS란 무엇인가
 
-"An API for asynchronous programming with observable streams"
+> "An API for asynchronous programming with observable streams"
 
 **R**eactive e**X**tensions Library for **J**ava**S**cript의 약자로, 옵저버 패턴을 통해 이벤트 스트림을 제어하여 비동기 프로그래밍을 처리하는 (API를 제공하는) 라이브러리이다. 현재 안정화 버전은 6이며, 베타 버전인 7까지 나와있다. Angular에는 이 RxJS가 기본적으로 내장되어 있다.
 
@@ -33,19 +33,21 @@ Observable은 데이터 스트림을 만들고 내보내는 객체이고, Observ
 
 #### Observable 생성
 아래와 같이 생성할 수 있다.
-```// 메서드를 호출하고, 리턴 값을 `returnVal`에 할당한다
-returnVal = someMethod(itsParameters);
-// returnVal을 통해 필요한 작업을 진행한다```
+
+    // 메서드를 호출하고, 리턴 값을 `returnVal`에 할당한다
+    returnVal = someMethod(itsParameters);
+    // returnVal을 통해 필요한 작업을 진행한다
 
 비동기의 경우는 이렇게 생성한다.
-```// 옵저버의 onNext 핸들러를 정의한다, 하지만 실행하지는 않는다
-// (이 예제에서는, 단순히 옵저버에 onNext 핸들러만 구현한다)
-def myOnNext = { it -> /* 필요한 연산을 처리한다 */ };
-// Observable을 정의하지만, 역시 실행하지는 않는다
-def myObservable = someObservable(itsParameters);
-// 옵저버가 Observable을 구독한다. 그리고 Observable을 실행한다
-myObservable.subscribe(myOnNext);
-// 필요한 코드를 구현한다```
+
+    // 옵저버의 onNext 핸들러를 정의한다, 하지만 실행하지는 않는다
+    // (이 예제에서는, 단순히 옵저버에 onNext 핸들러만 구현한다)
+    def myOnNext = { it -> /* 필요한 연산을 처리한다 */ };
+    // Observable을 정의하지만, 역시 실행하지는 않는다
+    def myObservable = someObservable(itsParameters);
+    // 옵저버가 Observable을 구독한다. 그리고 Observable을 실행한다
+    myObservable.subscribe(myOnNext);
+    // 필요한 코드를 구현한다
 
 #### 옵저버 메소드
 `onNext` 새로운 데이터를 내보낼 때 호출되는 메소드. 파라미터를 통해 옵저버블을 전달한다.
