@@ -16,6 +16,7 @@ category: S2_Round2
 **R**eactive e**X**tensions Library for **J**ava**S**cript의 약자로, 옵저버 패턴을 통해 이벤트 스트림을 제어하여 비동기 프로그래밍을 처리하는 (API를 제공하는) 라이브러리이다. 현재 안정화 버전은 6이며, 베타 버전인 7까지 나와있다. Angular에는 이 RxJS가 기본적으로 내장되어 있다.
 
 
+
 ## Reactive? Stream? Observable? 그게 다 뭔데?!
 
 ### Reactive Programming
@@ -34,20 +35,8 @@ Observable은 데이터 스트림을 만들고 내보내는 객체이고, Observ
 #### Observable 생성
 아래와 같이 생성할 수 있다.
 
-    // 메서드를 호출하고, 리턴 값을 `returnVal`에 할당한다
-    returnVal = someMethod(itsParameters);
-    // returnVal을 통해 필요한 작업을 진행한다
-
-비동기의 경우는 이렇게 생성한다.
-
-    // 옵저버의 onNext 핸들러를 정의한다, 하지만 실행하지는 않는다
-    // (이 예제에서는, 단순히 옵저버에 onNext 핸들러만 구현한다)
-    def myOnNext = { it -> /* 필요한 연산을 처리한다 */ };
-    // Observable을 정의하지만, 역시 실행하지는 않는다
-    def myObservable = someObservable(itsParameters);
-    // 옵저버가 Observable을 구독한다. 그리고 Observable을 실행한다
-    myObservable.subscribe(myOnNext);
-    // 필요한 코드를 구현한다
+    import { fromEvent } from 'rxjs';
+    fromEvent(document, 'click').subscribe(() => console.log('Clicked!'));
 
 #### 옵저버 메소드
 `onNext` 새로운 데이터를 내보낼 때 호출되는 메소드. 파라미터를 통해 옵저버블을 전달한다.
@@ -58,8 +47,38 @@ Observable은 데이터 스트림을 만들고 내보내는 객체이고, Observ
 RxJS에서 제공하는 대부분의 연산자는 이 옵저버블 객체에서 동작하고, 옵저버블 객체를 반환한다. 즉, 연산자 체이닝이 가능하다. 이 연산자 체인은 순서에 따라 결과가 달라지므로 순서대로 실행되어야한다. 
 대표적인 연산자는 `create`, `map`, `merge` 등이 있다. 
 
+#### 예제코드
+코드
 
+    import { Observable } from 'rxjs';
+ 
+    const observable = new Observable(subscriber => {
+      subscriber.next(1);
+      subscriber.next(2);
+      subscriber.next(3);
+      setTimeout(() => {
+        subscriber.next(4);
+        subscriber.complete();
+      }, 1000);
+    });
+ 
+    console.log('just before subscribe');
+    observable.subscribe({
+      next(x) { console.log('got value ' + x); },
+      error(err) { console.error('something wrong occurred: ' + err); },
+      complete() { console.log('done'); }
+    });
+    console.log('just after subscribe');
 
+실행결과
+
+    just before subscribe
+    got value 1
+    got value 2
+    got value 3
+    just after subscribe
+    got value 4
+    done
 
 ## 그래서 RxJS, 뭐가 좋은건데?
 * 동기 / 비동기에 관계 없이 데이터를 일관적으로 처리 가능
@@ -70,7 +89,13 @@ RxJS에서 제공하는 대부분의 연산자는 이 옵저버블 객체에서 
 ### 참고
 
 http://reactivex.io/
+
 https://velog.io/@dvmflstm/RxJS-Practice
+
 https://poiemaweb.com/angular-rxjs
+
 https://tienne.gitbooks.io/learnrxjs/content/
+
 https://hyunseob.github.io/2016/10/09/understanding-reactive-programming-and-rxjs/
+
+https://rxjs-dev.firebaseapp.com/
