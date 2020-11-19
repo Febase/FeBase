@@ -49,8 +49,14 @@ const arrCopy = arr.concat('c')
 - **Reaction**:Derivation과 비슷하다. 차이점은, 값을 생성하지 않는 함수이며 Task를 수행하기 위해 자동으로 수행되며 주로 I/O 작업과 연관된다. (ex. DOM update, Network ..) 
 - **Action**: State를 변경할 수 있는 모든 것을 의미하며 동기적으로 처리된다.
 
+### 장점
+- 쉬운 편이다!
+
 ### 단점
 - 문서가 부실하다..
+- 개발자 도구가 불편하다!
+- 애플리케이션이 커질수록 복잡해진다 (Store가 여러개이기 떄문에)
+
 ## Reference
 - [TECH CONCERT: FRONT END 2019 - 데이터 상태 관리. 그것을 알려주마](https://www.youtube.com/watch?v=o4meZ7MRd5o&feature=youtu.be)
 - [Why and When to use Redux](https://blog.usejournal.com/why-and-when-to-use-redux-b57f7dae9269)
