@@ -18,6 +18,8 @@
 
 게시물 | 날짜 | 글쓴이
 ---|---|---
+[RxJS R아보기](https://github.com/Febase/FeBase/blob/master/S2_Round2/rxjs.md)| 2020-11-19 | [@symoon](https://github.com/symoon)
+[RxJS R아보기](https://github.com/Febase/FeBase/blob/master/S2_Round1/rxjs.md)| 2020-11-19 | [@symoon](https://github.com/symoon)
 [sample](https://github.com/Febase/FeBase/blob/master/S2_Round2/sample.md)| 2020-11-09 | [@dev-owen](https://github.com/dev-owen)
 
 ### S2_ROUND3
