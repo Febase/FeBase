@@ -2,7 +2,7 @@
 title: RxJS R아보기
 date: 2020-11-19 00:00:00
 author: symoon
-category: S2_Round2
+category: S2_Round1
 ---
 
 
