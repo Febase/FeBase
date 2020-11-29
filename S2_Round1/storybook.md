@@ -179,7 +179,7 @@ Small.args = {
 <summary>실행결과 Sample</summary>
 
 - [react-dates](http://airbnb.io/react-dates/?path=/story/daterangepicker-drp--default)
-- [storybook](https://storybook.js.org/docs/react/get-started/examples#gatsby-focus-wrapper)
+- [storybook](https://next--storybookjs.netlify.app/official-storybook/)
 </details>
 
 <br>
