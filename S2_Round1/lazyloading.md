@@ -1,3 +1,10 @@
+---
+title: 
+date: 2020-11-19 00:00:00
+author: chjjh0
+category: S2_Round1
+---
+
 ## 👀특징
 
 ![WhaleScreenCapture-20201121-211650](https://user-images.githubusercontent.com/39721166/99877284-398cf400-2c40-11eb-8054-14a8508002bc.jpg)
