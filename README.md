@@ -49,6 +49,7 @@
 ---|---|---
 [JS 상태관리 도구 개론](https://github.com/Febase/FeBase/blob/master/S2_Round1/JS 상태관리 도구 개론.md)| 2020-11-19 | [@wooooooood](https://github.com/wooooooood)
 [RxJS R아보기](https://github.com/Febase/FeBase/blob/master/S2_Round1/rxjs.md)| 2020-11-19 | [@symoon](https://github.com/symoon)
+[S2_Round1/lazyloading.md](https://github.com/Febase/FeBase/blob/master/S2_Round1/lazyloading.md)| 2020-11-19 | [@chjjh0](https://github.com/chjjh0)
 [nextjs_tutorial_ch1](https://github.com/Febase/FeBase/blob/master/S2_Round1/nextjs_tutorial_ch1.md)| 2020-11-17 | [@dev-owen](https://github.com/dev-owen)
 [차트 라이브러리](https://github.com/Febase/FeBase/blob/master/S2_Round1/chart-library.md)| 2020-11-11 | [@junCastle](https://github.com/junCastle)
 [sample](https://github.com/Febase/FeBase/blob/master/S2_Round1/sample.md)| 2020-11-09 | [@dev-owen](https://github.com/dev-owen)
