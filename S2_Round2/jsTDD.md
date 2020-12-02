@@ -42,18 +42,18 @@ TDD 프로세스
 - 테스트 코드를 작성, 유지하기 위한 비용과 시간
 
 ### How?
-- Mock객체를 생성하여 테스트
+- **Mock객체**를 생성하여 테스트
     - 변경할 수 없는 객체, 프레임워크, 외부 라이브러리는 Mock하지 않는다
     - ex. `Jest`에서 기본적으로 제공하는 mock functions
     ```js
     const myMockFunc = jest.fn().mockName("myMockFunc");
     const myExampleModule = jest.mock("./exampleModule");
     ```
-- Private객체의 테스트는?
+- **Private객체**의 테스트는?
     1. Public 객체에서 커버되는 경우 테스트하지 않는다.
     2. 리팩토링 고려. 해당 객체가 불필요한 책임을 가졌을 수 있다.
     3. 접근 제한을 Public으로 변경 후 `@VisibleForTesting` 추가
-- 하나의 테스트에는 하나의 기능만 테스트한다
+- 하나의 테스트에는 **하나의 기능**만 테스트한다
     - 대상 코드의 의도 표현
     - 데이터가 아닌 행위를 테스트한다 `given-when-then`
 - 테스트하기 어려운 코드가 있다면 *어떻게 하면 테스트할 수 있을까* 가 아닌, ***왜 테스트하기 어려울까***를 고민
@@ -62,9 +62,9 @@ TDD 프로세스
 
 ![TDD pyramid](https://miro.medium.com/max/1200/1*BfpihCUZnTOp-yt6WZjI0g.png)
 
-- Unit Testing: 가장 작은 단위 테스트(함수)
-- Integration Testing: 시스템 모델링에서 실제 기능, 퍼포먼스, 의존성, DB 데이터 등을 테스트
-- UI Testing (E2E): 사용자 관점 테스트(UI)
+- **Unit Testing**: 가장 작은 단위 테스트(함수)
+- **Integration Testing**: 시스템 모델링에서 실제 기능, 퍼포먼스, 의존성, DB 데이터 등을 테스트
+- **UI Testing (E2E)**: 사용자 관점 테스트(UI)
 
 ## **Unit Test 단위 테스트**
 - 가장 작은 단위
@@ -84,7 +84,6 @@ TDD 프로세스
 
 1. 테스트를 진행할 파일 `unit.test.js`를 생성한다.
     - `.test.js` suffix를 사용해야 한다.
-
 ```jsx
 const add = (a, b) => {
     return 1;
@@ -94,7 +93,6 @@ test('solution', () => {
     expect(add(1, 1)).toBe(2);
 });
 ```
-
 - 영어 문법과 비슷: expect ~ toBe (보통 value) / expect ~ toEqual (array 등의 object)
 
 2. 테스트 `npm test ./unit.test.js` 결과는 반드시 실패한다. (Red)
@@ -102,7 +100,6 @@ test('solution', () => {
 ![Red](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7232e4f5-a6dd-47b8-a124-a2e68982c784/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201202%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201202T135507Z&X-Amz-Expires=86400&X-Amz-Signature=cb2c06e1821bebae7ed5432559ad80aaa0a74eb0277612495415bae737b677f3&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
 3. 성공하는 테스트 코드를 작성한다. (Green)
-
 ```jsx
 const add = (a, b) => {
 		const num1 = a;
@@ -119,7 +116,6 @@ test('solution', () => {
 ![Green](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0a76740d-37df-4b31-8b19-326a5e1c1fcf/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201202%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201202T135525Z&X-Amz-Expires=86400&X-Amz-Signature=2bfbb4b23aa22ed1fa1a8428f807b7b749366ec58f13c789c11e30b736818d6f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
 4. 성공 확인 후 리팩토링한다. (Refactor)
-
 ```jsx
 const add = (a, b) => {
     return a+b;
@@ -166,12 +162,12 @@ function mockApiResponse(endpoint, payload) {
 - Web, App 등에서의 시나리오, 기능 확인
 - 가장 확실하고 가장 필요한 테스트
 
-## E2E with **`Cypress`**
+### E2E with **`Cypress`**
 - [여기](https://softchris.github.io/pages/cypress.html)에 자세한 예제가 나와있어 일부 사진과 기능만을 가져왔다.  
 - `Cypress`는 다양한 helper를 지원하여 사용자 action에 따른 테스트가 가능하다.  
 - 현재는 Chrome과 Electron만 지원한다.
 
-1. Visit 
+1. **Visit**
 ```js
 describe('My First Test', function() {
   it('Visits page', function() {
@@ -179,17 +175,19 @@ describe('My First Test', function() {
   })
 })
 ```
-![Cypress visit](https://thepracticaldev.s3.amazonaws.com/i/gh608lx54t1scsjehftk.png)
-
-2. Interact
+![Cypress visit](https://thepracticaldev.s3.amazonaws.com/i/gh608lx54t1scsjehftk.png)  
+  
+  
+2. **Interact**
 ```js
 cy.contains('type').click()
 ```
-![Cypress click](https://thepracticaldev.s3.amazonaws.com/i/v8xgdtz25pccpzl68in5.png)
-
-3. Debug
-코드상에서 멈추고 싶은 위치에 `cy.pause()`를 삽입하여 디버깅할 수 있다.
-`cy.debug()`를 삽입하면 개발자 도구에서 Args등의 로그를 추가로 확인할 수 있다.
+![Cypress click](https://thepracticaldev.s3.amazonaws.com/i/v8xgdtz25pccpzl68in5.png)  
+  
+  
+3. **Debug**  
+- 코드상에서 멈추고 싶은 위치에 `cy.pause()`를 삽입하여 디버깅할 수 있다.
+- `cy.debug()`를 삽입하면 개발자 도구에서 Args등의 로그를 추가로 확인할 수 있다.
 ![Cypress debug](https://thepracticaldev.s3.amazonaws.com/i/y2b7iq93toexnc89rhnp.gif)
 
 ## Reference
