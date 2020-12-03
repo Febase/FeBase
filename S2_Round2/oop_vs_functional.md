@@ -1,6 +1,6 @@
 ---
 title: 함수형 프로그래밍과 클래스형 프로그래밍
-date: 2020-12-03 07:30:00
+date: 2020-12-03
 author: tjdud0123 (엄서영)
 category: S2_Round2
 ---
