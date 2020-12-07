@@ -21,7 +21,7 @@ category: S2_Round2
 
 React, Vue와 같은 SPA(Single Page Application)는 최초 로딩시에 모든 리소스를 **번들링**하여 한 번에 받아온다. 때문에 규모가 커질 수록 파일 용량이 커지면서 로딩 속도가 느려질 수 밖에 없다. 이 때, 코드 분할을 통해 필요한 시점에 필요한 리소스만을 받아올 수 있도록하여 로딩 속도 이슈를 개선할 수 있도록한다. 로딩 속도를 개선함으로 UX를 향상되고, SEO 측면에서도 유리해 질 수 있다.
 
-## 접근방식
+## 코드 분할 방법
 웹팩 공식문서에서 제시하는 일반적인 접근법은 다음과 같다.
 
 1. Entry Points
@@ -100,6 +100,7 @@ React, Vue와 같은 SPA(Single Page Application)는 최초 로딩시에 모든 
 2. Prevent Duplication
 
 	중복제거 및 청크 분리를 위해 Entry dependencies 또는 SplitChunkPlugin을 사용하는 방식
+	(*청크 : 웹팩에서 처리를 하면서 분리 된 코드 단위)
 
 	#### Entry dependencies
 
@@ -178,6 +179,7 @@ React, Vue와 같은 SPA(Single Page Application)는 최초 로딩시에 모든 
 		};
 
 	위와 같은 옵션을 추가합으로써, 중복된 dependency를 제거할 수 있다.
+	[optimization.splitChunks 옵션 더보기](https://webpack.js.org/plugins/split-chunks-plugin/#optimizationsplitchunks, "웹팩 공식문서")
 
 	빌드 결과
 
@@ -200,7 +202,7 @@ React, Vue와 같은 SPA(Single Page Application)는 최초 로딩시에 모든 
 	모듈 내부에서 인라인 함수 호출을 통해 코드를 분할 하는 방식
 
 	- import()
-	- require.ensure
+	- require.ensure (레거시)
 
 	**webpack.config.js**
 		
@@ -281,7 +283,78 @@ React, Vue와 같은 SPA(Single Page Application)는 최초 로딩시에 모든 
 		webpack 5.4.0 compiled successfully in 268 ms
  
 
+## React에서 Code Splitting 적용하기 ([참고](https://ko.reactjs.org/docs/code-splitting.html, "리액트 공식문서"))
 
+리액트의 경우 CRA 또는 Next.js를 사용한다면, 별도 설치 없이 바로 사용 가능하다.
+
+- import() 
+- React.lazy
+
+		import React, { Suspense } from 'react';
+
+		const OtherComponent = React.lazy(() => import('./OtherComponent'));
+
+		function MyComponent() {
+			return (
+				<div>
+					<Suspense fallback={<div>Loading...</div>}>
+						<OtherComponent />
+					</Suspense>
+				</div>
+			);
+		}
+
+- 라우트 기반 코드 분할(Route-based)
+
+		import React, { Suspense, lazy } from 'react';
+		import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+		const Home = lazy(() => import('./routes/Home'));
+		const About = lazy(() => import('./routes/About'));
+
+		const App = () => (
+			<Router>
+				<Suspense fallback={<div>Loading...</div>}>
+					<Switch>
+						<Route exact path="/" component={Home}/>
+						<Route path="/about" component={About}/>
+					</Switch>
+				</Suspense>
+			</Router>
+		);
+
+- Named Exports
+	
+	**ManyComponents.js**
+	
+		export const MyComponent = /* ... */;
+		export const MyUnusedComponent = /* ... */;
+
+	**MyComponent.js**
+
+		export { MyComponent as default } from "./ManyComponents.js";
+
+	**MyApp.js**
+
+		import React, { lazy } from 'react';
+		const MyComponent = lazy(() => import("./MyComponent.js"));
+
+그 외 좀 더 정리가 잘 된 블로그 [참고](https://velog.io/@velopert/react-code-splitting, "리액트 프로젝트 코드 스플리팅 정복하기") 
+
+Vue.js는 공식문서 [참고](https://kr.vuejs.org/v2/guide/components-dynamic-async.html, "동적 & 비동기 컴포넌트")
+
+## 번들 분석
+웹팩은 몇 가지 공식 번들 분석도구가 있어서, 이런 도구를 이용해 효율적으로 번들을 구성, 관리 할 수 있다.
+
+- [webpack-chart](https://alexkuz.github.io/webpack-chart/, "webpack-chart"): 웹팩 통계를 파이차트로 보여줌 
+- [webpack-visualizer](https://www.npmjs.com/package/webpack-visualizer-plugin, "webpack-visulaizer"): 어떤 모듈이 공간을 차지하고 있고, 중복되었는지 확인할 수 있도록 번들을 시각화하고 분석해줌
+- [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer, "webpack-bundle-analyzer"): 번들을 트리맵으로 시각화해서 나타내주고 확대/축소 가능한 인터렉티브 컨텐츠 제공
+- [webpack bundle optimize helper](https://webpack.jakoblind.no/optimize/, "webpack bundle optimize helper"): 번들 분석해서 번들 크기를 줄일 수 있도록 실행가능한 제안을 해줌
+- [bundle-stats](https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html, "bundle-stats"): 번들 리포트 생성, 빌드 간 결과 비교 제공
+
+
+## 정리
+웹팩에서 코드 분할 하는 방법에 대해서 정리를 해보았다. 번들 분석도구와 코드 분할을 잘 활용한다면 사이트 성능 개선에 많은 도움이 될 수 있을 것 같다.
 
 ---
 ### 참고
@@ -291,3 +364,5 @@ https://joshua1988.github.io/vue-camp/advanced/code-splitting.html
 https://webpack.js.org/guides/code-splitting/
 
 https://ko.reactjs.org/docs/code-splitting.html
+
+https://velog.io/@velopert/react-code-splitting
