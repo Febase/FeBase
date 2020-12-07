@@ -99,7 +99,11 @@ React, Vue와 같은 SPA(Single Page Application)는 최초 로딩시에 모든 
 
 2. Prevent Duplication
 
-	중복제거 및 청크로 분리를 위해 Entry dependencies 또는 SplitChunkPlugin을 사용하는 방식
+	중복제거 및 청크 분리를 위해 Entry dependencies 또는 SplitChunkPlugin을 사용하는 방식
+
+	#### Entry dependencies
+
+	**webpack.config.js**
 
 		const path = require('path');
  
@@ -108,11 +112,11 @@ React, Vue와 같은 SPA(Single Page Application)는 최초 로딩시에 모든 
 			entry: {
 				index: {
 					import: './src/index.js',
-					dependOn: 'shared',
+					dependOn: 'shared', //dependOn 옵션을 추가해줌
 				},
 				another: {
 					import: './src/another-module.js',
-					dependOn: 'shared',
+					dependOn: 'shared', //dependOn 옵션을 추가해줌
 				},
 				shared: 'lodash',
 			},
@@ -127,17 +131,156 @@ React, Vue와 같은 SPA(Single Page Application)는 최초 로딩시에 모든 
 		};
 
 	여러 진입점 사용시 발생할 수 있는 문제점 [참고](https://bundlers.tooling.report/code-splitting/multi-entry/, "multi entry")
+
+	빌드 결과
+
+		...
+		[webpack-cli] Compilation finished
+		asset shared.bundle.js 549 KiB [compared for emit] (name: shared)
+		asset runtime.bundle.js 7.79 KiB [compared for emit] (name: runtime)
+		asset index.bundle.js 1.77 KiB [compared for emit] (name: index)
+		asset another.bundle.js 1.65 KiB [compared for emit] (name: another)
+		Entrypoint index 1.77 KiB = index.bundle.js
+		Entrypoint another 1.65 KiB = another.bundle.js
+		Entrypoint shared 557 KiB = runtime.bundle.js 7.79 KiB shared.bundle.js 549 KiB
+		runtime modules 3.76 KiB 7 modules
+		cacheable modules 530 KiB
+			./node_modules/lodash/lodash.js 530 KiB [built] [code generated]
+			./src/another-module.js 84 bytes [built] [code generated]
+			./src/index.js 257 bytes [built] [code generated]
+		webpack 5.4.0 compiled successfully in 249 ms
 	
+
+	#### SplitChunksPlugin
+
+	공통 dependencies를 기존 엔트리 청크나 새로운 엔트리 청크로 분리할 수 있는 방식
+
+	**webpack.config.js**
+
+		const path = require('path');
+
+		module.exports = {
+			mode: 'development',
+			entry: {
+				index: './src/index.js',
+				another: './src/another-module.js',
+			},
+			output: {
+				filename: '[name].bundle.js',
+				path: path.resolve(__dirname, 'dist'),
+			},
+			//아래 코드를 추가해줌
+			optimization: {
+				splitChunks: {
+					chunks: 'all', 
+				},
+			},
+		};
+
+	위와 같은 옵션을 추가합으로써, 중복된 dependency를 제거할 수 있다.
+
+	빌드 결과
+
+		...
+		[webpack-cli] Compilation finished
+		asset vendors-node_modules_lodash_lodash_js.bundle.js 549 KiB [compared for emit] (id hint: vendors)
+		asset index.bundle.js 8.92 KiB [compared for emit] (name: index)
+		asset another.bundle.js 8.8 KiB [compared for emit] (name: another)
+		Entrypoint index 558 KiB = vendors-node_modules_lodash_lodash_js.bundle.js 549 KiB index.bundle.js 8.92 KiB
+		Entrypoint another 558 KiB = vendors-node_modules_lodash_lodash_js.bundle.js 549 KiB another.bundle.js 8.8 KiB
+		runtime modules 7.64 KiB 14 modules
+		cacheable modules 530 KiB
+			./src/index.js 257 bytes [built] [code generated]
+			./src/another-module.js 84 bytes [built] [code generated]
+			./node_modules/lodash/lodash.js 530 KiB [built] [code generated]
+		webpack 5.4.0 compiled successfully in 241 ms
 
 3. Dynamic Import
 
 	모듈 내부에서 인라인 함수 호출을 통해 코드를 분할 하는 방식
 
- 
-### 라우트 기반 
-### Named Export
+	- import()
+	- require.ensure
 
-## 정리
+	**webpack.config.js**
+		
+		const path = require('path');
+		
+		module.exports = {
+			mode: 'development',
+			entry: {
+				index: './src/index.js',
+			},
+			output: {
+				filename: '[name].bundle.js',
+				path: path.resolve(__dirname, 'dist'),
+			},
+		};
+
+
+	프로젝트 구성
+
+		webpack-demo
+		|- package.json
+		|- webpack.config.js
+		|- /dist
+		|- /src
+			|- index.js
+		|- /node_modules
+
+
+	**src/index.js**
+
+	변경 전
+
+		import _ from 'lodash';
+
+		function component() {
+			const element = document.createElement('div');
+		
+			element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+		
+			return element;
+		}
+		
+		document.body.appendChild(component());
+
+
+	변경 후 
+
+
+		function getComponent() {
+			const element = document.createElement('div');
+		
+			return import('lodash')
+				.then(({ default: _ }) => {
+					const element = document.createElement('div');
+
+					element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+		
+					return element;
+				})
+				.catch((error) => 'An error occurred while loading the component');
+		}
+		
+		getComponent().then((component) => {
+			document.body.appendChild(component);
+		});
+
+	
+	빌드 결과
+
+		...
+		[webpack-cli] Compilation finished
+		asset vendors-node_modules_lodash_lodash_js.bundle.js 549 KiB [compared for emit] (id hint: vendors)
+		asset index.bundle.js 13.5 KiB [compared for emit] (name: index)
+		runtime modules 7.37 KiB 11 modules
+		cacheable modules 530 KiB
+			./src/index.js 434 bytes [built] [code generated]
+			./node_modules/lodash/lodash.js 530 KiB [built] [code generated]
+		webpack 5.4.0 compiled successfully in 268 ms
+ 
+
 
 
 ---
