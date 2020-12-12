@@ -12,7 +12,7 @@ category: S2_Round2
 >
 > 웹팩이란 최신 프런트엔드 프레임워크에서 가장 많이 사용되는 모듈 번들러(Module Bundler)입니다. 모듈 번들러란 웹 애플리케이션을 구성하는 자원(HTML, CSS, Javscript, Images 등)을 모두 각각의 모듈로 보고 이를 조합해서 병합된 하나의 결과물을 만드는 도구를 의미합니다.
 >
-> 출처 : [웹팩 핸드북](https://joshua1988.github.io/webpack-guide/webpack/what-is-webpack.html#%EC%9B%B9%ED%8C%A9%EC%9D%B4%EB%9E%80, "webpack handbook link") 
+> 출처 : [웹팩 핸드북](https://joshua1988.github.io/webpack-guide/webpack/what-is-webpack.html#%EC%9B%B9%ED%8C%A9%EC%9D%B4%EB%9E%80 "webpack handbook link") 
 
 ![웹팩 번들링](https://miro.medium.com/max/2292/1*EGKixnuLcRXJrz_XcmPaqg.png)
 
@@ -179,7 +179,7 @@ React, Vue와 같은 SPA(Single Page Application)는 최초 로딩시에 모든 
 		};
 
 	위와 같은 옵션을 추가합으로써, 중복된 dependency를 제거할 수 있다.
-	[optimization.splitChunks 옵션 더보기](https://webpack.js.org/plugins/split-chunks-plugin/#optimizationsplitchunks, "웹팩 공식문서")
+	[optimization.splitChunks 옵션 더보기](https://webpack.js.org/plugins/split-chunks-plugin/#optimizationsplitchunks "웹팩 공식문서")
 
 	빌드 결과
 
@@ -283,7 +283,7 @@ React, Vue와 같은 SPA(Single Page Application)는 최초 로딩시에 모든 
 		webpack 5.4.0 compiled successfully in 268 ms
  
 
-## React에서 Code Splitting 적용하기 ([참고](https://ko.reactjs.org/docs/code-splitting.html, "리액트 공식문서"))
+## React에서 Code Splitting 적용하기 ([참고](https://ko.reactjs.org/docs/code-splitting.html "리액트 공식문서"))
 
 리액트의 경우 CRA 또는 Next.js를 사용한다면, 별도 설치 없이 바로 사용 가능하다.
 
@@ -339,18 +339,18 @@ React, Vue와 같은 SPA(Single Page Application)는 최초 로딩시에 모든 
 		import React, { lazy } from 'react';
 		const MyComponent = lazy(() => import("./MyComponent.js"));
 
-그 외 좀 더 정리가 잘 된 블로그 [참고](https://velog.io/@velopert/react-code-splitting, "리액트 프로젝트 코드 스플리팅 정복하기") 
+그 외 좀 더 정리가 잘 된 블로그 [참고](https://velog.io/@velopert/react-code-splitting "리액트 프로젝트 코드 스플리팅 정복하기") 
 
-Vue.js는 공식문서 [참고](https://kr.vuejs.org/v2/guide/components-dynamic-async.html, "동적 & 비동기 컴포넌트")
+Vue.js는 공식문서 [참고](https://kr.vuejs.org/v2/guide/components-dynamic-async.html "동적 & 비동기 컴포넌트")
 
 ## 번들 분석
 웹팩은 몇 가지 공식 번들 분석도구가 있어서, 이런 도구를 이용해 효율적으로 번들을 구성, 관리 할 수 있다.
 
-- [webpack-chart](https://alexkuz.github.io/webpack-chart/, "webpack-chart"): 웹팩 통계를 파이차트로 보여줌 
-- [webpack-visualizer](https://www.npmjs.com/package/webpack-visualizer-plugin, "webpack-visulaizer"): 어떤 모듈이 공간을 차지하고 있고, 중복되었는지 확인할 수 있도록 번들을 시각화하고 분석해줌
-- [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer, "webpack-bundle-analyzer"): 번들을 트리맵으로 시각화해서 나타내주고 확대/축소 가능한 인터렉티브 컨텐츠 제공
-- [webpack bundle optimize helper](https://webpack.jakoblind.no/optimize/, "webpack bundle optimize helper"): 번들 분석해서 번들 크기를 줄일 수 있도록 실행가능한 제안을 해줌
-- [bundle-stats](https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html, "bundle-stats"): 번들 리포트 생성, 빌드 간 결과 비교 제공
+- [webpack-chart](https://alexkuz.github.io/webpack-chart/ "webpack-chart"): 웹팩 통계를 파이차트로 보여줌 
+- [webpack-visualizer](https://www.npmjs.com/package/webpack-visualizer-plugin "webpack-visulaizer"): 어떤 모듈이 공간을 차지하고 있고, 중복되었는지 확인할 수 있도록 번들을 시각화하고 분석해줌
+- [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer "webpack-bundle-analyzer"): 번들을 트리맵으로 시각화해서 나타내주고 확대/축소 가능한 인터렉티브 컨텐츠 제공
+- [webpack bundle optimize helper](https://webpack.jakoblind.no/optimize/ "webpack bundle optimize helper"): 번들 분석해서 번들 크기를 줄일 수 있도록 실행가능한 제안을 해줌
+- [bundle-stats](https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html "bundle-stats"): 번들 리포트 생성, 빌드 간 결과 비교 제공
 
 
 ## 정리
