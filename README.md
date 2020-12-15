@@ -35,9 +35,10 @@
 
 게시물 | 날짜 | 글쓴이
 ---|---|---
+[storybook](https://github.com/Febase/FeBase/blob/master/S2_Round1/storybook.md)| 2020-11-26 | [@chjjh0](https://github.com/chjjh0)
 [JS 상태관리 도구 개론](https://github.com/Febase/FeBase/blob/master/S2_Round1/introduction-to-stateManagementTools.md)| 2020-11-19 | [@wooooooood](https://github.com/wooooooood)
 [RxJS R아보기](https://github.com/Febase/FeBase/blob/master/S2_Round1/rxjs.md)| 2020-11-19 | [@symoon](https://github.com/symoon)
-[S2_Round1/lazyloading.md](https://github.com/Febase/FeBase/blob/master/S2_Round1/lazyloading.md)| 2020-11-19 | [@chjjh0](https://github.com/chjjh0)
+[LazyLoading](https://github.com/Febase/FeBase/blob/master/S2_Round1/lazyloading.md)| 2020-11-19 | [@chjjh0](https://github.com/chjjh0)
 [nextjs_tutorial_ch1](https://github.com/Febase/FeBase/blob/master/S2_Round1/nextjs_tutorial_ch1.md)| 2020-11-17 | [@dev-owen](https://github.com/dev-owen)
 [차트 라이브러리](https://github.com/Febase/FeBase/blob/master/S2_Round1/chart-library.md)| 2020-11-11 | [@junCastle](https://github.com/junCastle)
 
@@ -45,6 +46,7 @@
 
 게시물 | 날짜 | 글쓴이
 ---|---|---
+[FID](https://github.com/Febase/FeBase/blob/master/S2_Round3/FID.md)| 2020-12-10 | [@chjjh0](https://github.com/chjjh0)
 [sample](https://github.com/Febase/FeBase/blob/master/S2_Round3/sample.md)| 2020-11-09 | [@dev-owen](https://github.com/dev-owen)
 
 ### JAVASCRIPT
