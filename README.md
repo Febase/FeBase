@@ -35,6 +35,7 @@
 
 게시물 | 날짜 | 글쓴이
 ---|---|---
+[필드에서의 웹 바이탈 측정 모범 사례](https://github.com/Febase/FeBase/blob/master/S2_Round3/web-vitals-best-practice.md)| 2020-12-13 | [@symoon](https://github.com/symoon)
 [FID](https://github.com/Febase/FeBase/blob/master/S2_Round3/FID.md)| 2020-12-10 | [@chjjh0](https://github.com/chjjh0)
 [sample](https://github.com/Febase/FeBase/blob/master/S2_Round3/sample.md)| 2020-11-09 | [@dev-owen](https://github.com/dev-owen)
 
@@ -54,6 +55,7 @@
 게시물 | 날짜 | 글쓴이
 ---|---|---
 [CSS-in-JS](https://github.com/Febase/FeBase/blob/master/S2_Round2/css_in_js.md)| 2020-12-03 | [@dev-owen](https://github.com/dev-owen)
+[Code Splitting 쪼개보기](https://github.com/Febase/FeBase/blob/master/S2_Round2/code-splitting.md)| 2020-12-03 | [@symoon](https://github.com/symoon)
 [React 렌더링 측정(Lighthouse)](https://github.com/Febase/FeBase/blob/master/S2_Round2/lighthouse.md)| 2020-11-26 | [@junCastle](https://github.com/junCastle)
 
 ### JAVASCRIPT
