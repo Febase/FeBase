@@ -39,7 +39,6 @@
 [LCP](https://github.com/Febase/FeBase/blob/master/S2_Round3/LCP.md)| 2020-12-10 | [@wooooooood](https://github.com/wooooooood)
 [Core Web Vitals](https://github.com/Febase/FeBase/blob/master/S2_Round3/core-web-vitals.md)| 2020-12-10 | [@dev-owen](https://github.com/dev-owen)
 [FID](https://github.com/Febase/FeBase/blob/master/S2_Round3/FID.md)| 2020-12-10 | [@chjjh0](https://github.com/chjjh0)
-[sample](https://github.com/Febase/FeBase/blob/master/S2_Round3/sample.md)| 2020-11-09 | [@dev-owen](https://github.com/dev-owen)
 
 ### S2_ROUND1
 
