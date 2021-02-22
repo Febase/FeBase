@@ -78,7 +78,7 @@ TDD 프로세스
 
 ```jsx
 "scripts": {
-"test": "jest"
+  "test": "jest"
 },
 ```
 
@@ -86,11 +86,11 @@ TDD 프로세스
     - `.test.js` suffix를 사용해야 한다.
 ```jsx
 const add = (a, b) => {
-    return 1;
+  return 1;
 };
 
 test('solution', () => {
-    expect(add(1, 1)).toBe(2);
+  expect(add(1, 1)).toBe(2);
 });
 ```
 - 영어 문법과 비슷: expect ~ toBe (보통 value) / expect ~ toEqual (array 등의 object)
@@ -102,14 +102,14 @@ test('solution', () => {
 3. 성공하는 테스트 코드를 작성한다. (Green)
 ```jsx
 const add = (a, b) => {
-		const num1 = a;
-		const num2 = b;
+  const num1 = a;
+  const num2 = b;
 
-    return num1 + num2;
+  return num1 + num2;
 };
 
 test('solution', () => {
-    expect(add(1, 1)).toBe(2);
+  expect(add(1, 1)).toBe(2);
 });
 ```
 
@@ -118,11 +118,11 @@ test('solution', () => {
 4. 성공 확인 후 리팩토링한다. (Refactor)
 ```jsx
 const add = (a, b) => {
-    return a+b;
+  return a+b;
 };
 
 test('solution', () => {
-    expect(add(1, 1)).toBe(2);
+  expect(add(1, 1)).toBe(2);
 });
 ```
 
