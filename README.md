@@ -14,32 +14,6 @@
 
 <!-- toc starts -->
 
-### INTERVIEW
-
-게시물 | 날짜 | 글쓴이
----|---|---
-[FE Interview 11](https://github.com/Febase/FeBase/blob/master/interview/devowen_interview3.md)| 2020-08-12 | [@dev-owen](https://github.com/dev-owen)
-[FE Interview 10](https://github.com/Febase/FeBase/blob/master/interview/Snowjang24_interview3.md)| 2020-08-12 | [@snowjang24](https://github.com/snowjang24)
-[FE Interview 9](https://github.com/Febase/FeBase/blob/master/interview/Samslow_Interview3.md)| 2020-08-12 | [@samslow](https://github.com/samslow)
-[FE Interview 8](https://github.com/Febase/FeBase/blob/master/interview/Nailer_interview2.md)| 2020-08-05 | [@nailerHeum](https://github.com/nailerHeum)
-[FE Interview 10](https://github.com/Febase/FeBase/blob/master/interview/Nailer_interview3.md)| 2020-08-05 | [@nailerHeum](https://github.com/nailerHeum)
-[FE Interview 7](https://github.com/Febase/FeBase/blob/master/interview/devowen_interview2.md)| 2020-08-05 | [@dev-owen](https://github.com/dev-owen)
-[FE Interview 5](https://github.com/Febase/FeBase/blob/master/interview/Samslow_Interview2.md)| 2020-08-05 | [@samslow](https://github.com/samslow)
-[FE Interview 6](https://github.com/Febase/FeBase/blob/master/interview/jinsunee_interview1.md)| 2020-08-05 | [@jinsunee](https://github.com/jinsunee)
-[FE Interview 4](https://github.com/Febase/FeBase/blob/master/interview/Snowjang24_Interview1.md)| 2020-08-05 | [@snowjang24](https://github.com/snowjang24)
-[FE Interview 2](https://github.com/Febase/FeBase/blob/master/interview/Samslow_Interview1.md)| 2020-07-28 | [@samslow](https://github.com/samslow)
-[FE Interview 3](https://github.com/Febase/FeBase/blob/master/interview/Nailer_interview1.md)| 2020-07-28 | [@nailerHeum](https://github.com/nailerHeum)
-[FE Interview 1](https://github.com/Febase/FeBase/blob/master/interview/devowen_interview1.md)| 2020-07-27 | [@dev-owen](https://github.com/dev-owen)
-
-### S2_ROUND3
-
-게시물 | 날짜 | 글쓴이
----|---|---
-[필드에서의 웹 바이탈 측정 모범 사례](https://github.com/Febase/FeBase/blob/master/S2_Round3/web-vitals-best-practice.md)| 2020-12-13 | [@symoon](https://github.com/symoon)
-[LCP](https://github.com/Febase/FeBase/blob/master/S2_Round3/LCP.md)| 2020-12-10 | [@wooooooood](https://github.com/wooooooood)
-[Core Web Vitals](https://github.com/Febase/FeBase/blob/master/S2_Round3/core-web-vitals.md)| 2020-12-10 | [@dev-owen](https://github.com/dev-owen)
-[FID](https://github.com/Febase/FeBase/blob/master/S2_Round3/FID.md)| 2020-12-10 | [@chjjh0](https://github.com/chjjh0)
-
 ### S2_ROUND1
 
 게시물 | 날짜 | 글쓴이
@@ -51,15 +25,31 @@
 [nextjs_tutorial_ch1](https://github.com/Febase/FeBase/blob/master/S2_Round1/nextjs_tutorial_ch1.md)| 2020-11-17 | [@dev-owen](https://github.com/dev-owen)
 [차트 라이브러리](https://github.com/Febase/FeBase/blob/master/S2_Round1/chart-library.md)| 2020-11-11 | [@junCastle](https://github.com/junCastle)
 
-### S2_ROUND2
+### S2_ROUND3
 
 게시물 | 날짜 | 글쓴이
 ---|---|---
-[JS TDD 개론](https://github.com/Febase/FeBase/blob/master/S2_Round2/jsTDD.md)| 2020-12-03 | [@wooooooood](https://github.com/wooooooood)
-[CSS-in-JS](https://github.com/Febase/FeBase/blob/master/S2_Round2/css_in_js.md)| 2020-12-03 | [@dev-owen](https://github.com/dev-owen)
-[Code Splitting 쪼개보기](https://github.com/Febase/FeBase/blob/master/S2_Round2/code-splitting.md)| 2020-12-03 | [@symoon](https://github.com/symoon)
-[함수형 프로그래밍과 클래스형 프로그래밍](https://github.com/Febase/FeBase/blob/master/S2_Round2/oop_vs_functional.md)| 2020-12-03 | [@tjdud0123 (엄서영)](https://github.com/tjdud0123 (엄서영))
-[React 렌더링 측정(Lighthouse)](https://github.com/Febase/FeBase/blob/master/S2_Round2/lighthouse.md)| 2020-11-26 | [@junCastle](https://github.com/junCastle)
+[필드에서의 웹 바이탈 측정 모범 사례](https://github.com/Febase/FeBase/blob/master/S2_Round3/web-vitals-best-practice.md)| 2020-12-13 | [@symoon](https://github.com/symoon)
+[LCP](https://github.com/Febase/FeBase/blob/master/S2_Round3/LCP.md)| 2020-12-10 | [@wooooooood](https://github.com/wooooooood)
+[Core Web Vitals](https://github.com/Febase/FeBase/blob/master/S2_Round3/core-web-vitals.md)| 2020-12-10 | [@dev-owen](https://github.com/dev-owen)
+[FID](https://github.com/Febase/FeBase/blob/master/S2_Round3/FID.md)| 2020-12-10 | [@chjjh0](https://github.com/chjjh0)
+
+### INTERVIEW
+
+게시물 | 날짜 | 글쓴이
+---|---|---
+[FE Interview 11](https://github.com/Febase/FeBase/blob/master/interview/devowen_interview3.md)| 2020-08-12 | [@dev-owen](https://github.com/dev-owen)
+[FE Interview 9](https://github.com/Febase/FeBase/blob/master/interview/Samslow_Interview3.md)| 2020-08-12 | [@samslow](https://github.com/samslow)
+[FE Interview 10](https://github.com/Febase/FeBase/blob/master/interview/Snowjang24_interview3.md)| 2020-08-12 | [@snowjang24](https://github.com/snowjang24)
+[FE Interview 8](https://github.com/Febase/FeBase/blob/master/interview/Nailer_interview2.md)| 2020-08-05 | [@nailerHeum](https://github.com/nailerHeum)
+[FE Interview 10](https://github.com/Febase/FeBase/blob/master/interview/Nailer_interview3.md)| 2020-08-05 | [@nailerHeum](https://github.com/nailerHeum)
+[FE Interview 7](https://github.com/Febase/FeBase/blob/master/interview/devowen_interview2.md)| 2020-08-05 | [@dev-owen](https://github.com/dev-owen)
+[FE Interview 5](https://github.com/Febase/FeBase/blob/master/interview/Samslow_Interview2.md)| 2020-08-05 | [@samslow](https://github.com/samslow)
+[FE Interview 4](https://github.com/Febase/FeBase/blob/master/interview/Snowjang24_Interview1.md)| 2020-08-05 | [@snowjang24](https://github.com/snowjang24)
+[FE Interview 6](https://github.com/Febase/FeBase/blob/master/interview/jinsunee_interview1.md)| 2020-08-05 | [@jinsunee](https://github.com/jinsunee)
+[FE Interview 3](https://github.com/Febase/FeBase/blob/master/interview/Nailer_interview1.md)| 2020-07-28 | [@nailerHeum](https://github.com/nailerHeum)
+[FE Interview 2](https://github.com/Febase/FeBase/blob/master/interview/Samslow_Interview1.md)| 2020-07-28 | [@samslow](https://github.com/samslow)
+[FE Interview 1](https://github.com/Febase/FeBase/blob/master/interview/devowen_interview1.md)| 2020-07-27 | [@dev-owen](https://github.com/dev-owen)
 
 ### JAVASCRIPT
 
@@ -69,12 +59,12 @@
 [Front to the ES2020](https://github.com/Febase/FeBase/blob/master/Javascript/ES2020.md)| 2020-07-15 | [@snowjang24](https://github.com/snowjang24)
 [Javascript 기초 - 버블 버블 버블 팝! 이벤트 버블링!](https://github.com/Febase/FeBase/blob/master/Javascript/EventBubling.md)| 2020-07-14 | [@samslow](https://github.com/samslow)
 [0.1 + 0.2 !== 0.3 인 이유 (ieee 754)](https://github.com/Febase/FeBase/blob/master/Javascript/Number_Floating_Point.md)| 2020-07-08 | [@jinsunee](https://github.com/jinsunee)
-[This keyword, call & apply](https://github.com/Febase/FeBase/blob/master/Javascript/This_Keyword_Call_Apply.md)| 2020-07-08 | [@nailerHeum](https://github.com/nailerHeum)
 [Javascript var, let/const and Temporary Dead Zone](https://github.com/Febase/FeBase/blob/master/Javascript/variable_tdz.md)| 2020-07-08 | [@jinsunee](https://github.com/jinsunee)
+[This keyword, call & apply](https://github.com/Febase/FeBase/blob/master/Javascript/This_Keyword_Call_Apply.md)| 2020-07-08 | [@nailerHeum](https://github.com/nailerHeum)
 [V8 엔진](https://github.com/Febase/FeBase/blob/master/Javascript/V8_Engine.md)| 2020-07-07 | [@dayoung](https://github.com/dayoung)
-[Web 기본부터 Alaboza](https://github.com/Febase/FeBase/blob/master/Javascript/Web_Working_Concept.md)| 2020-07-02 | [@samslow](https://github.com/samslow)
-[Garbage Collector](https://github.com/Febase/FeBase/blob/master/Javascript/Garbage_Collector.md)| 2020-07-02 | [@snowjang24](https://github.com/snowjang24)
 [Javascript 스코프](https://github.com/Febase/FeBase/blob/master/Javascript/Scope.md)| 2020-07-02 | [@jinsunee](https://github.com/jinsunee)
+[Garbage Collector](https://github.com/Febase/FeBase/blob/master/Javascript/Garbage_Collector.md)| 2020-07-02 | [@snowjang24](https://github.com/snowjang24)
+[Web 기본부터 Alaboza](https://github.com/Febase/FeBase/blob/master/Javascript/Web_Working_Concept.md)| 2020-07-02 | [@samslow](https://github.com/samslow)
 [호이스팅](https://github.com/Febase/FeBase/blob/master/Javascript/Hoisting.md)| 2020-06-30 | [@dayoung](https://github.com/dayoung)
 [Iterator & Generator](https://github.com/Febase/FeBase/blob/master/Javascript/Iterator_Generator.md)| 2020-06-26 | [@nailerHeum](https://github.com/nailerHeum)
 [Javascript 데이터 타입](https://github.com/Febase/FeBase/blob/master/Javascript/DataType.md)| 2020-06-25 | [@jinsunee](https://github.com/jinsunee)
@@ -82,15 +72,25 @@
 [Javascript 기초 - JavaScript 개발한다면 JIT은 알아야JIT](https://github.com/Febase/FeBase/blob/master/Javascript/JIT.md)| 2020-06-25 | [@samslow](https://github.com/samslow)
 [ES Module에 대해서](https://github.com/Febase/FeBase/blob/master/Javascript/ES_Module.md)| 2020-06-25 | [@nailerHeum](https://github.com/nailerHeum)
 [그냥 ES11인가 뭐시깽이 쓰면 되는거 아님?](https://github.com/Febase/FeBase/blob/master/Javascript/Es6_Spec.md)| 2020-06-25 | [@samslow](https://github.com/samslow)
-[비동기(Asynchronous)](https://github.com/Febase/FeBase/blob/master/Javascript/Asynchronous.md)| 2020-06-19 | [@snowjang24](https://github.com/snowjang24)
-[따라쟁이 셋째 JS가 지키고 싶었던 것 - Prototype](https://github.com/Febase/FeBase/blob/master/Javascript/Prototype.md)| 2020-06-19 | [@samslow](https://github.com/samslow)
 [실행 컨텍스트와 클로저 (Execution Context & Closure)](https://github.com/Febase/FeBase/blob/master/Javascript/executionContextAndClosure.md)| 2020-06-19 | [@nailerHeum](https://github.com/nailerHeum)
+[따라쟁이 셋째 JS가 지키고 싶었던 것 - Prototype](https://github.com/Febase/FeBase/blob/master/Javascript/Prototype.md)| 2020-06-19 | [@samslow](https://github.com/samslow)
+[비동기(Asynchronous)](https://github.com/Febase/FeBase/blob/master/Javascript/Asynchronous.md)| 2020-06-19 | [@snowjang24](https://github.com/snowjang24)
 
 ### WEB
 
 게시물 | 날짜 | 글쓴이
 ---|---|---
 [브라우저에 데이터 저장하기](https://github.com/Febase/FeBase/blob/master/Javascript/Storing_Data_In_Browser.md)| 2020-07-15 | [@nailerHeum](https://github.com/nailerHeum)
+
+### S2_ROUND2
+
+게시물 | 날짜 | 글쓴이
+---|---|---
+[JS TDD 개론](https://github.com/Febase/FeBase/blob/master/S2_Round2/jsTDD.md)| 2020-12-03 | [@wooooooood](https://github.com/wooooooood)
+[CSS-in-JS](https://github.com/Febase/FeBase/blob/master/S2_Round2/css_in_js.md)| 2020-12-03 | [@dev-owen](https://github.com/dev-owen)
+[Code Splitting 쪼개보기](https://github.com/Febase/FeBase/blob/master/S2_Round2/code-splitting.md)| 2020-12-03 | [@symoon](https://github.com/symoon)
+[함수형 프로그래밍과 클래스형 프로그래밍](https://github.com/Febase/FeBase/blob/master/S2_Round2/oop_vs_functional.md)| 2020-12-03 | [@tjdud0123 (엄서영)](https://github.com/tjdud0123 (엄서영))
+[React 렌더링 측정(Lighthouse)](https://github.com/Febase/FeBase/blob/master/S2_Round2/lighthouse.md)| 2020-11-26 | [@junCastle](https://github.com/junCastle)
 <!-- toc ends -->
 
 ## HandBook
